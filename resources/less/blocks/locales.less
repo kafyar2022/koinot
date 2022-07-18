@@ -1,0 +1,36 @@
+.locales {
+  display: flex;
+  align-items: center;
+}
+
+.locales__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.locales__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.locales__item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  &--current {
+    color: @secondary-light;
+  }
+}
+
+.locales__link {
+  display: block;
+}

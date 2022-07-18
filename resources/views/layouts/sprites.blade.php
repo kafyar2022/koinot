@@ -32,5 +32,9 @@
       <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m14 9.833-1.25-6.25L.667.667 3.583 12.75 9.833 14 14 9.833Z" />
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m.667.667 6.321 6.321M8.167 9.833a1.667 1.667 0 1 0 0-3.333 1.667 1.667 0 0 0 0 3.333Z" />
     </symbol>
+
+    <symbol id="triangle" viewBox="0 0 16 14" fill="none">
+      <path fill="currentColor" d="m8 0 7.794 13.5H.206L8 0Z" />
+    </symbol>
   </svg>
 </div>
