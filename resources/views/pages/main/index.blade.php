@@ -7,5 +7,6 @@
 @section('content')
   <main class="main-page">
     <h1 class="container">Main page</h1>
+    
   </main>
 @endsection

@@ -36,5 +36,10 @@
     <symbol id="triangle" viewBox="0 0 16 14" fill="none">
       <path fill="currentColor" d="m8 0 7.794 13.5H.206L8 0Z" />
     </symbol>
+
+    <symbol id="more" viewBox="0 0 18 18" fill="none">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M9 17.333A8.333 8.333 0 1 0 9 .667a8.333 8.333 0 0 0 0 16.666Z" />
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M9 12.333 12.333 9 9 5.667M5.667 9h6.666" />
+    </symbol>
   </svg>
 </div>

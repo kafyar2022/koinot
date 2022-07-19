@@ -1,0 +1,31 @@
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  background-color: @primary;
+  border: none;
+  border-radius: 4px;
+  color: @basic-white;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+  min-width: max-content;
+  padding: 16px 24px;
+  box-shadow: 4px 4px 40px fade(@primary, 60%);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
