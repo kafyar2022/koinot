@@ -19,7 +19,7 @@ class Helper
       ->orWhere('page', null)
       ->get();
 
-    $response = '';
+    $response = [];
     foreach ($contents as $content) {
       $response[$content->slug] = $content->content;
     }
