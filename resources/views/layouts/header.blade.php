@@ -142,7 +142,7 @@
         </li>
 
         <li class="page-nav__item @if ($route == 'contacts') page-nav__item--current @endif">
-          <a class="page-nav__link" @if ($route != 'contacts') href="{{ route('contacts', $locale) }}" @endif>@lang('Контакты')</a>
+          <a class="page-nav__link" @if ($route != 'contacts') href="{{ route('contacts', ['locale' => $locale]) }}" @endif>@lang('Контакты')</a>
         </li>
       </ul>
 
