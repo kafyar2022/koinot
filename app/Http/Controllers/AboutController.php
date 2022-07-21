@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-  public function index($locale, $category)
+  public function index($category)
   {
-    $data = Helper::getContents($locale, 'about.' . $category);
+    $data = Helper::getContents(app()->getLocale(), 'about.' . $category);
 
     return view('pages.about.' . $category, compact('data'));
   }

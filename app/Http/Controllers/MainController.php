@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-  public function index($locale)
+  public function index()
   {
-    $data = Helper::getContents($locale, 'main');
+    $data = Helper::getContents(app()->getLocale(), 'main');
 
     return view('pages.main.index', compact('data'));
   }

@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class ContactsController extends Controller
 {
-  public function index($locale)
+  public function index()
   {
-    $data = Helper::getContents($locale, 'contacts');
+    $data = Helper::getContents(app()->getLocale(), 'contacts');
 
     return view('pages.contacts.index', compact('data'));
   }

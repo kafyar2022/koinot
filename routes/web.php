@@ -21,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', 'ru');
-
-Route::group(['prefix' => '{locale}'], function() {
+Route::prefix(parseLocale())->group(function () {
   Route::get('/', [MainController::class, 'index'])->name('main');
   Route::get('/about/{category}', [AboutController::class, 'index'])->name('about');
   Route::get('/news', [NewsController::class, 'index'])->name('news');
@@ -36,3 +34,15 @@ Route::group(['prefix' => '{locale}'], function() {
   Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier');
   Route::get('/carrier/test', [CarrierController::class, 'test'])->name('carrier.test');
 });
+
+function parseLocale()
+{
+  $locale = request()->segment(1);
+  $locales = config('app.translatable_locales');
+  $default = config('app.fallback_locale');
+
+  if ($locale !== $default && in_array($locale, $locales)) {
+    app()->setLocale($locale);
+    return $locale;
+  }
+}

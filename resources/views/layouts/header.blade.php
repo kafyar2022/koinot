@@ -1,6 +1,6 @@
 <header class="page-header">
   <div class="page-header__top container">
-    <a class="page-header__logo" @if ($route != 'main') href="{{ route('main', $locale) }}" @endif>
+    <a class="page-header__logo" @if ($route != 'main') href="{{ route('main') }}" @endif>
       <picture>
         <source media="(max-width: 767px)" srcset="img/logotype-mobile.svg">
         <source media="(max-width: 1279px)" srcset="img/logotype-tablet.svg">
@@ -68,9 +68,21 @@
       </span>
       <ul class="locales__list">
         @foreach (config('app.available_locales') as $lang)
-          <li class="locales__item @if ($locale == $lang) locales__item--current @endif">
-            <a class="locales__link" @if ($locale != $lang) href="{{ route($route, ['locale' => $lang, 'category' => request('category'), 'slug' => request('slug')]) }}" @endif>{{ ucfirst($lang) }}</a>
-          </li>
+          @if ($locale == config('app.fallback_locale'))
+            <li class="locales__item @if ($locale == $lang) locales__item--current @endif">
+              <a class="locales__link" @if ($locale != $lang) href="/{{ $lang . '/' . request()->path() }}" @endif>{{ ucfirst($lang) }}</a>
+            </li>
+          @else
+            @if ($lang == config('app.fallback_locale'))
+              <li class="locales__item @if ($locale == $lang) locales__item--current @endif">
+                <a class="locales__link" @if ($locale != $lang) href="/{{ substr(request()->path(), 3) }}" @endif>{{ ucfirst($lang) }}</a>
+              </li>
+            @else
+              <li class="locales__item @if ($locale == $lang) locales__item--current @endif">
+                <a class="locales__link" @if ($locale != $lang) href="/{{ $lang . '/' . substr(request()->path(), 3) }}" @endif>{{ ucfirst($lang) }}</a>
+              </li>
+            @endif
+          @endif
         @endforeach
       </ul>
     </div>
@@ -80,7 +92,7 @@
     <div class="page-nav__container container">
       <ul class="page-nav__list">
         <li class="page-nav__item @if ($route == 'main') page-nav__item--current @endif">
-          <a class="page-nav__link" @if ($route != 'main') href="{{ route('main', $locale) }}" @endif>@lang('Главная')</a>
+          <a class="page-nav__link" @if ($route != 'main') href="{{ route('main') }}" @endif>@lang('Главная')</a>
         </li>
 
         <li class="page-nav__item @if ($route == 'about' || $route == 'news' || $route == 'news.show') page-nav__item--current @endif">
@@ -88,16 +100,16 @@
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
             <li class="page-nav__subitem @if (request('category') == 'history') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'history') href="{{ route('about', ['locale' => $locale, 'category' => 'history']) }}" @endif>@lang('История')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'history') href="{{ route('about', ['category' => 'history']) }}" @endif>@lang('История')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'mission') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'mission') href="{{ route('about', ['locale' => $locale, 'category' => 'mission']) }}" @endif>@lang('Миссия, видение, ценности')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'mission') href="{{ route('about', ['category' => 'mission']) }}" @endif>@lang('Миссия, видение, ценности')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'management') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'management') href="{{ route('about', ['locale' => $locale, 'category' => 'management']) }}" @endif>@lang('Менеджмент')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'management') href="{{ route('about', ['category' => 'management']) }}" @endif>@lang('Менеджмент')</a>
             </li>
             <li class="page-nav__subitem @if ($route == 'news' || $route == 'news.show') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if ($route != 'news') href="{{ route('news', $locale) }}" @endif>@lang('Новости')</a>
+              <a class="page-nav__sublink" @if ($route != 'news') href="{{ route('news') }}" @endif>@lang('Новости')</a>
             </li>
           </ul>
           <svg class="page-nav__icon" width="16" height="14">
@@ -110,10 +122,10 @@
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
             <li class="page-nav__subitem @if (request('category') == 'by-us') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'by-us') href="{{ route('projects', ['locale' => $locale, 'category' => 'by-us']) }}" @endif>@lang('Реализованные нами')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'by-us') href="{{ route('projects', ['category' => 'by-us']) }}" @endif>@lang('Реализованные нами')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'with-us') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'with-us') href="{{ route('projects', ['locale' => $locale, 'category' => 'with-us']) }}" @endif>@lang('При нашей поддержке')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'with-us') href="{{ route('projects', ['category' => 'with-us']) }}" @endif>@lang('При нашей поддержке')</a>
             </li>
           </ul>
           <svg class="page-nav__icon" width="16" height="14">
@@ -126,10 +138,10 @@
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
             <li class="page-nav__subitem @if (request('category') == 'investors') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'investors') href="{{ route('partnership', ['locale' => $locale, 'category' => 'investors']) }}" @endif>@lang('Инвесторам и государствам')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'investors') href="{{ route('partnership', ['category' => 'investors']) }}" @endif>@lang('Инвесторам и государствам')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'startups') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'startups') href="{{ route('partnership', ['locale' => $locale, 'category' => 'startups']) }}" @endif>@lang('Стартаперам и новаторам')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'startups') href="{{ route('partnership', ['category' => 'startups']) }}" @endif>@lang('Стартаперам и новаторам')</a>
             </li>
           </ul>
           <svg class="page-nav__icon" width="16" height="14">
@@ -138,15 +150,15 @@
         </li>
 
         <li class="page-nav__item @if ($route == 'contribution') page-nav__item--current @endif">
-          <a class="page-nav__link" @if ($route != 'contribution') href="{{ route('contribution', $locale) }}" @endif>@lang('Вклад в общество')</a>
+          <a class="page-nav__link" @if ($route != 'contribution') href="{{ route('contribution') }}" @endif>@lang('Вклад в общество')</a>
         </li>
 
         <li class="page-nav__item @if ($route == 'contacts') page-nav__item--current @endif">
-          <a class="page-nav__link" @if ($route != 'contacts') href="{{ route('contacts', ['locale' => $locale]) }}" @endif>@lang('Контакты')</a>
+          <a class="page-nav__link" @if ($route != 'contacts') href="{{ route('contacts') }}" @endif>@lang('Контакты')</a>
         </li>
       </ul>
 
-      <a class="carrier-link @if ($route == 'carrier' || $route == 'carrier.test') carrier-link--current @endif" @if ($route != 'carrier') href="{{ route('carrier', $locale) }}" @endif>
+      <a class="carrier-link @if ($route == 'carrier' || $route == 'carrier.test') carrier-link--current @endif" @if ($route != 'carrier') href="{{ route('carrier') }}" @endif>
         <span class="carrier-link__icon">
           <svg width="18" height="18">
             <use xlink:href="#pero"></use>

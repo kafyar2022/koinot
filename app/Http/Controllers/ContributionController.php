@@ -7,16 +7,16 @@ use Illuminate\Http\Request;
 
 class ContributionController extends Controller
 {
-  public function index($locale)
+  public function index()
   {
-    $data = Helper::getContents($locale, 'contribution');
+    $data = Helper::getContents(app()->getLocale(), 'contribution');
 
     return view('pages.contribution.index', compact('data'));
   }
 
-  public function show($locale, $slug)
+  public function show($slug)
   {
-    $data = Helper::getContents($locale, 'contribution.show');
+    $data = Helper::getContents(app()->getLocale(), 'contribution.show');
 
     return view('pages.contribution.show', compact('data'));
   }
