@@ -7,16 +7,16 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-  public function index($locale)
+  public function index()
   {
-    $data = Helper::getContents($locale, 'news');
+    $data = Helper::getContents(app()->getLocale(), 'news');
 
     return view('pages.news.index', compact('data'));
   }
 
-  public function show($locale, $slug)
+  public function show($slug)
   {
-    $data = Helper::getContents($locale, 'news.show');
+    $data = Helper::getContents(app()->getLocale(), 'news.show');
 
     return view('pages.news.show', compact('data'));
   }

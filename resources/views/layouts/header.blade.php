@@ -100,13 +100,13 @@
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
             <li class="page-nav__subitem @if (request('category') == 'history') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'history') href="{{ route('about', ['category' => 'history']) }}" @endif>@lang('История')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'history') href="{{ route('about', 'history') }}" @endif>@lang('История')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'mission') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'mission') href="{{ route('about', ['category' => 'mission']) }}" @endif>@lang('Миссия, видение, ценности')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'mission') href="{{ route('about', 'mission') }}" @endif>@lang('Миссия, видение, ценности')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'management') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'management') href="{{ route('about', ['category' => 'management']) }}" @endif>@lang('Менеджмент')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'management') href="{{ route('about', 'management') }}" @endif>@lang('Менеджмент')</a>
             </li>
             <li class="page-nav__subitem @if ($route == 'news' || $route == 'news.show') page-nav__subitem--current @endif">
               <a class="page-nav__sublink" @if ($route != 'news') href="{{ route('news') }}" @endif>@lang('Новости')</a>
@@ -122,10 +122,10 @@
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
             <li class="page-nav__subitem @if (request('category') == 'by-us') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'by-us') href="{{ route('projects', ['category' => 'by-us']) }}" @endif>@lang('Реализованные нами')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'by-us') href="{{ route('projects', 'by-us') }}" @endif>@lang('Реализованные нами')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'with-us') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'with-us') href="{{ route('projects', ['category' => 'with-us']) }}" @endif>@lang('При нашей поддержке')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'with-us') href="{{ route('projects', 'with-us') }}" @endif>@lang('При нашей поддержке')</a>
             </li>
           </ul>
           <svg class="page-nav__icon" width="16" height="14">
@@ -138,10 +138,10 @@
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
             <li class="page-nav__subitem @if (request('category') == 'investors') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'investors') href="{{ route('partnership', ['category' => 'investors']) }}" @endif>@lang('Инвесторам и государствам')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'investors') href="{{ route('partnership', 'investors') }}" @endif>@lang('Инвесторам и государствам')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'startups') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'startups') href="{{ route('partnership', ['category' => 'startups']) }}" @endif>@lang('Стартаперам и новаторам')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'startups') href="{{ route('partnership', 'startups') }}" @endif>@lang('Стартаперам и новаторам')</a>
             </li>
           </ul>
           <svg class="page-nav__icon" width="16" height="14">

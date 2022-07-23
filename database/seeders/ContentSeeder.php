@@ -38,7 +38,7 @@ class ContentSeeder extends Seeder
       [
         'slug' => 'main-page-opportunity',
         'page' => 'main',
-        'content' => '<h2>Страна <br> возможностей</h2><p>Современный Таджикистан</p><a href="#">Смотреть <br> видео</a>',
+        'content' => '<h2>Страна возможностей</h2><p>Современный Таджикистан</p><a href="#">Смотреть <br> видео</a>',
       ],
       [
         'slug' => '',
