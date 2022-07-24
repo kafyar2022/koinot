@@ -8,7 +8,7 @@
   <main class="history-page">
     <div class="history-page__board board" style="background-image: linear-gradient(rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0.7)), url('/files/img/history-page-board.jpg')">
       <div class="board__container container">
-        <div class="history-page__board-content" data-content="main-page-board-{{ $locale }}">
+        <div class="history-page__board-content" data-content="history-page-board-{{ $locale }}">
           <h2>Группа компаний<br>КОИНОТИ НАВ</h2>
           <p>Верим, можем, создаем</p>
           <a href="#">Смотреть<br>видео</a>
