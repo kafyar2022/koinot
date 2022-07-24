@@ -14,7 +14,7 @@ class MainController extends Controller
   {
     $locale = app()->getLocale();
 
-    $data = Helper::getContents(app()->getLocale(), 'main');
+    $data = Helper::getContents($locale, 'main');
 
     $data['histories'] = History::where('locale', $locale)
       ->get();
