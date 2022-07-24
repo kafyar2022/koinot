@@ -9,7 +9,7 @@
     <div class="main-page__board board" style="background-image: url('files/img/main-page-board.jpg')">
       <div class="board__container container">
         <div class="main-page__board-content" data-content="main-page-board-{{ $locale }}">
-          <h1>Группа компаний Коиноти нав</h1>
+          <h1>Группа компаний КОИНОТИ НАВ`</h1>
           <p>Верим, можем, создаем</p>
           <a href="/about/history">Подробнее</a>
         </div>
@@ -68,7 +68,37 @@
           <a href="/news">Читать все новости</a>
         </div>
 
+        <div class="main-page__news-list">
+          @foreach ($data['news'] as $news)
+            <x-news-card :news="$news" />
+          @endforeach
+        </div>
+      </div>
+    </section>
 
+    <section class="main-page__projects">
+      <div class="container">
+        <div class="main-page__projects-content" data-content="main-page-projects-{{ $locale }}">
+          <h2>Наши проекты</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed<br>
+            ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed<br>
+            aliquam sed ullamcorper.</p>
+          <a href="/projects">Все наши проекты</a>
+        </div>
+
+        <div class="main-page__projects-list glide">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              @foreach ($data['partners'] as $partner)
+                <li class="glide__slide">
+                  <a class="main-page__projects-item" href="{{ $partner->url }}" target="_blank">
+                    <img class="main-page__projects-img" src="{{ asset('files/projects/' . $partner->logo) }}" width="165" height="112" alt="{{ $partner->title }}">
+                  </a>
+                </li>
+              @endforeach
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </main>

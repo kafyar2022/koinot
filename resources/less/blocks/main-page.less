@@ -12,6 +12,7 @@
   p {
     font-weight: 300;
     font-size: 28px;
+    text-transform: uppercase;
     margin: 0;
   }
 
@@ -118,6 +119,39 @@
 .main-page__news-content {
   position: relative;
   color: @basic-white;
+  margin-bottom: 32px;
+
+  h2 {
+    .title();
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    .button();
+  }
+}
+
+.main-page__news-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  color: @basic-white;
+}
+
+.main-page__projects {
+  margin-top: 128px;
+  margin-bottom: 128px;
+}
+
+.main-page__projects-content {
+  position: relative;
   margin-bottom: 32px;
 
   h2 {
