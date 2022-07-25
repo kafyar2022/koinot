@@ -22,7 +22,12 @@ class NewsController extends Controller
 
   public function show($slug)
   {
+    $locale = app()->getLocale();
+
     $data = Helper::getContents(app()->getLocale(), 'news.show');
+
+    $data['news'] = News::where('slug', $slug)
+      ->first();
 
     return view('pages.news.show', compact('data'));
   }
