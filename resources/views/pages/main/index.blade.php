@@ -9,7 +9,7 @@
     <div class="main-page__board board" style="background-image: url('/files/img/main-page-board.jpg')">
       <div class="board__container container">
         <div class="main-page__board-content" data-content="main-page-board-{{ $locale }}">
-          <h1>Группа компаний КОИНОТИ НАВ`</h1>
+          <h1>Группа компаний КОИНОТИ НАВ</h1>
           <p>Верим, можем, создаем</p>
           <a href="/about/history">Подробнее</a>
         </div>

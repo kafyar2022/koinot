@@ -1,0 +1,83 @@
+.specialist-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: fade(@basic-black, 50%);
+  transition: 0.3s;
+}
+
+.page__body--overflow-hidden .specialist-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.specialist-modal__inner {
+  position: fixed;
+  left: -100%;
+  top: 50%;
+  width: 680px;
+  height: 824px;
+  background-color: @basic-white;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0px 100px 80px fade(@basic-black, 7%),
+    0px 65px 47px fade(@basic-black, 5%),
+    0px 38px 25px fade(@basic-black, 4%),
+    0px 20px 13px fade(@basic-black, 3.5%),
+    0px 8px 6.5px fade(@basic-black, 3%),
+    0px 2px 3px fade(@basic-black, 2%);
+  transition: 0.3s;
+}
+
+.page__body--overflow-hidden .specialist-modal__inner {
+  left: 50%;
+}
+
+.specialist-modal__img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  background-color: @img;
+}
+
+.specialist-modal__title {
+  .title();
+  margin: 64px;
+  margin-bottom: 8px;
+}
+
+.specialist-modal__position {
+  margin-top: 0;
+  margin-right: 64px;
+  margin-bottom: 32px;
+  margin-left: 64px;
+}
+
+.specialist-modal__content {
+  margin: 0px 32px 32px 64px;
+  padding-right: 32px;
+  height: 240px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: @primary;
+  }
+
+  p {
+    margin: 0;
+  }
+}

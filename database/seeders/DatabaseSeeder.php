@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
       HistoriesSeeder::class,
       NewsSeeder::class,
       PartnersSeeder::class,
+      SpecialistsSeeder::class,
+      PositionSeeder::class,
     ]);
   }
 }

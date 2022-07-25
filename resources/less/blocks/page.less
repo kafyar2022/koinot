@@ -4,6 +4,14 @@
   line-height: 1.4;
   color: @font;
   font-family: "DIN Pro", "Arial", sans-serif;
+}
+
+.page__body {
+  min-height: 100%;
+  background-color: @basic-white;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
@@ -17,14 +25,9 @@
   &::-webkit-scrollbar-thumb {
     background-color: @secondary;
   }
+
+  &--overflow-hidden {
+    overflow: hidden;
+    padding-right: 8px;
+  }
 }
-
-.page__body {
-  min-height: 100%;
-  background-color: @basic-white;
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  align-content: start;
-}
-
-
