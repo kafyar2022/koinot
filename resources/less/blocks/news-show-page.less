@@ -10,7 +10,7 @@
 
 .news-show-page__title {
   .title();
-  margin-bottom: 8ex;
+  margin-bottom: 8px;
 }
 
 .news-show-page__content {
@@ -19,4 +19,27 @@
   p {
     margin: 0;
   }
+}
+
+.news-show-page__gallery {
+  margin-bottom: 64px;
+}
+
+.news-show-page__last-news-content {
+  margin-bottom: 32px;
+
+  h2 {
+    .title();
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.news-show-page__last-news-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }

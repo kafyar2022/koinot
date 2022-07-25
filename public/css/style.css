@@ -1773,13 +1773,71 @@ a {
   font-size: 20px;
   margin: 0;
   margin-bottom: 16px;
-  margin-bottom: 8ex;
+  margin-bottom: 8px;
 }
 .news-show-page__content {
   margin-bottom: 32px;
 }
 .news-show-page__content p {
   margin: 0;
+}
+.news-show-page__gallery {
+  margin-bottom: 64px;
+}
+.news-show-page__last-news-content {
+  margin-bottom: 32px;
+}
+.news-show-page__last-news-content h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+.news-show-page__last-news-content p {
+  margin: 0;
+}
+.news-show-page__last-news-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 170px);
+  gap: 32px;
+}
+.gallery__item {
+  display: block;
+  border-radius: 4px;
+}
+.gallery__thumb {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+.gallery__thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.8);
+  border-radius: 4px;
+}
+.gallery__icon {
+  z-index: 1;
 }
 
 

@@ -29,6 +29,11 @@ class NewsController extends Controller
     $data['news'] = News::where('slug', $slug)
       ->first();
 
+    $data['last-news'] = News::where('locale', $locale)
+      ->latest()
+      ->take(3)
+      ->get();
+
     return view('pages.news.show', compact('data'));
   }
 }
