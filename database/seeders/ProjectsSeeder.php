@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Partner;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 
-class PartnersSeeder extends Seeder
+class ProjectsSeeder extends Seeder
 {
   /**
    * Run the database seeds.
@@ -37,8 +37,9 @@ class PartnersSeeder extends Seeder
     foreach (range(1, 27) as $key) {
       foreach (config('app.available_locales') as $locale) {
         foreach ($partners as $partner) {
-          Partner::create([
+          Project::create([
             'locale' => $locale,
+            'by_us' => $key % 2,
             'title' => $partner['title'],
             'logo' => $partner['logo'],
             'url' => $partner['url']

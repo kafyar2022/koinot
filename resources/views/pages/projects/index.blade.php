@@ -6,6 +6,34 @@
 
 @section('content')
   <main class="projects-page">
-    <h1 class="container">Projects page</h1>
+    <div class="projects-page__board board" style="background-image: url('/files/img/projects{{ request('category') ? '-category' : '' }}-page-board.jpg')">
+      <div class="board__container container">
+        <div class="projects-page__board-content" data-content="projects{{ request('category') ? '-category' : '' }}-page-board-{{ $locale }}">
+          <h1>Наши проекты</h1>
+          <p>Lorem ipsum dolor sit amet,<br>
+            consectetur adipiscing elit.</p>
+        </div>
+      </div>
+
+      <svg class="board__mask" width="1250" height="540">
+        <use xlink:href="#board-mask"></use>
+      </svg>
+    </div>
+
+    <div class="projects-page__content container">
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
+        pellentesque facilisis egestas risus egestas sit gravida.</p>
+    </div>
+
+    <div class="projects-page__projects container" id="projects">
+      @foreach ($data['projects'] as $project)
+        <x-project-card :project="$project" />
+      @endforeach
+    </div>
+
+    <div class="container">
+      {{ $data['projects']->fragment('projects')->links('components.pagination') }}
+    </div>
   </main>
 @endsection

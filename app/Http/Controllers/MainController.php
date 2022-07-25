@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\Helper;
 use App\Models\History;
 use App\Models\News;
-use App\Models\Partner;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -24,7 +24,7 @@ class MainController extends Controller
       ->take(3)
       ->get();
 
-    $data['partners'] = Partner::where('locale', $locale)
+    $data['projects'] = Project::where('locale', $locale)
       ->get();
 
     return view('pages.main.index', compact('data'));

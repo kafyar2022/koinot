@@ -15,7 +15,7 @@ class NewsController extends Controller
     $data = Helper::getContents(app()->getLocale(), 'news');
 
     $data['news'] = News::where('locale', $locale)
-      ->paginate(12);
+      ->paginate(9);
 
     return view('pages.news.index', compact('data'));
   }

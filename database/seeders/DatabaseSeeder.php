@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
       ContentSeeder::class,
       HistoriesSeeder::class,
       NewsSeeder::class,
-      PartnersSeeder::class,
+      ProjectsSeeder::class,
       SpecialistsSeeder::class,
       PositionSeeder::class,
     ]);

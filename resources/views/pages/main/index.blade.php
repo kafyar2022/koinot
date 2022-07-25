@@ -89,10 +89,10 @@
         <div class="main-page__projects-list glide">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-              @foreach ($data['partners'] as $partner)
+              @foreach ($data['projects'] as $project)
                 <li class="glide__slide">
-                  <a class="main-page__projects-item" href="{{ $partner->url }}" target="_blank">
-                    <img class="main-page__projects-img" src="{{ asset('files/projects/' . $partner->logo) }}" width="165" height="112" alt="{{ $partner->title }}">
+                  <a class="main-page__projects-item" href="{{ $project->url }}" target="_blank">
+                    <img class="main-page__projects-img" src="{{ asset('files/projects/' . $project->logo) }}" width="165" height="112" alt="{{ $project->title }}">
                   </a>
                 </li>
               @endforeach
