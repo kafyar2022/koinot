@@ -20,22 +20,24 @@
       </svg>
     </div>
 
-    <section class="news container">
-      <div class="news-page__content">
+    <section class="section-template container">
+      <div class="section-template__content content">
         <h2>Lorem Ipsum</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
           pellentesque facilisis egestas risus egestas sit gravida.</p>
       </div>
 
-      <ul class="news-page__list" id="news">
+      <ul class="section-template__list" id="news">
         @foreach ($data['news'] as $news)
-          <li class="news-page__item">
+          <li class="section-template__list-item">
             <x-news-card :news="$news" />
           </li>
         @endforeach
       </ul>
 
-      {{ $data['news']->fragment('news')->links('components.pagination') }}
+      <div class="section-template__pagination">
+        {{ $data['news']->fragment('news')->links('components.pagination') }}
+      </div>
     </section>
   </main>
 @endsection

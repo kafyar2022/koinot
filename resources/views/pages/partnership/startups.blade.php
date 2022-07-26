@@ -19,7 +19,7 @@
 
     <div class="container">
       <div class="startups-grid">
-        <div class="startups-page__content">
+        <div class="content">
           <h2>Lorem Ipsum</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitant condimentum aenean mauris, lacinia pharetra consequat, pharetra. Lectus venenatis, facilisi sed augue massa odio integer viverra a. Libero ut et, egestas felis. Duis penatibus eu, dictumst viverra eu, pharetra nam id. Rhoncus praesent ac sed leo a dolor. Et, nunc vulputate tortor in. Nunc tellus blandit nam eget cras. Ac aliquet phasellus rhoncus, dolor. Venenatis, odio sed lectus porta vitae nec bibendum. Tincidunt enim est, enim, nulla eget gravida. At egestas amet, lorem purus non. Amet nam duis diam fermentum lorem dignissim. Ullamcorper in donec nulla dignissim pretium sed aliquam.</p>
           <p></p>
@@ -70,7 +70,7 @@
           </p>
 
           <div class="form__bottom">
-            <p class="checkbox" style="margin-right: 32px">
+            <p class="checkbox">
               <label class="checkbox__label">
                 <input class="checkbox__input visually-hidden" name="is_terms_accepted" type="checkbox">
                 <span class="checkbox__icon">
@@ -86,7 +86,7 @@
         </form>
       </div>
 
-      <ul class="partnership-list">
+      <ul class="startups-page__partnership-list partnership-list">
         <li class="partnership-list__item">
           <h3 class="partnership-list__title">Инвесторам</h3>
           <a class="partnership-list__phone" href="tel:+99244000000">+992 (44) 000 000</a>
@@ -119,7 +119,7 @@
         </li>
       </ul>
 
-      <div class="startups-page__content">
+      <div class="content">
         <h2>Связь с нами</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
           pellentesque facilisis egestas risus egestas sit gravida.</p>

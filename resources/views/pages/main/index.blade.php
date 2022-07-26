@@ -8,7 +8,7 @@
   <main class="main-page">
     <div class="main-page__board board" style="background-image: url('/files/img/main-page-board.jpg')">
       <div class="board__container container">
-        <div class="main-page__board-content" data-content="main-page-board-{{ $locale }}">
+        <div class="main-page__board-content">
           <h1>Группа компаний КОИНОТИ НАВ</h1>
           <p>Верим, можем, создаем</p>
           <a href="/about/history">Подробнее</a>
@@ -24,7 +24,7 @@
       <x-histories :class="'main-page__grid-item'" :histories="$data['histories']" />
 
       <section class="main-page__grid-item" style="background-image: url('files/img/main-page-management.jpg')">
-        <div class="main-page__small-content" data-content="main-page-management-{{ $locale }}">
+        <div class="content" data-content="main-page-management-{{ $locale }}">
           <h2>Наш менеджмент</h2>
           <p>В нас сочетаются инновации и традиции.<br>
             Мы знак истинного качества, символ верности<br>
@@ -34,7 +34,7 @@
       </section>
 
       <section class="main-page__grid-item" style="background-image: url('files/img/main-page-investors.jpg')">
-        <div class="main-page__small-content" data-content="main-page-investors-{{ $locale }}">
+        <div class="content" data-content="main-page-investors-{{ $locale }}">
           <h2>Инвесторам</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.</p>
           <a href="/partnership/investors">Подробнее</a>
@@ -42,7 +42,7 @@
       </section>
 
       <section class="main-page__grid-item" style="background-image: url('files/img/main-page-contribution.jpg')">
-        <div class="main-page__small-content" data-content="main-page-contribution-{{ $locale }}">
+        <div class="content" data-content="main-page-contribution-{{ $locale }}">
           <h2>Вклад в общество</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.</p>
           <a href="/contribution">Подробнее</a>
@@ -59,13 +59,12 @@
     </div>
 
     <section class="main-page__news">
-      <div class="container">
-        <div class="main-page__news-content" data-content="main-page-news-{{ $locale }}">
+      <div class="main-page__news-container container">
+        <div class="content" data-content="main-page-news-{{ $locale }}">
           <h2>Наши новости</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed<br>
             ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed<br>
             aliquam sed ullamcorper.</p>
-          <a href="/news">Читать все новости</a>
         </div>
 
         <div class="main-page__news-list">
@@ -73,17 +72,18 @@
             <x-news-card :news="$news" />
           @endforeach
         </div>
+
+        <a class="main-page__more-link" href="{{ route('news') }}">Читать все новости</a>
       </div>
     </section>
 
     <section class="main-page__projects">
       <div class="container">
-        <div class="main-page__projects-content" data-content="main-page-projects-{{ $locale }}">
+        <div class="content" data-content="main-page-projects-{{ $locale }}">
           <h2>Наши проекты</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed<br>
             ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed<br>
             aliquam sed ullamcorper.</p>
-          <a href="/projects">Все наши проекты</a>
         </div>
 
         <div class="main-page__projects-list glide">
@@ -99,6 +99,7 @@
             </ul>
           </div>
         </div>
+        <a class="main-page__more-link" href="{{ route('projects') }}">Все наши проекты</a>
       </div>
     </section>
   </main>

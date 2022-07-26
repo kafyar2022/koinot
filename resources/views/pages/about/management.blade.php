@@ -19,16 +19,16 @@
       </svg>
     </div>
 
-    <section class="management-page__specialists container">
-      <div class="management-page__content">
+    <section class="section-template container">
+      <div class="section-template__content content">
         <h2>Lorem Ipsum</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
           pellentesque facilisis egestas risus egestas sit gravida.</p>
       </div>
 
-      <ul class="management-page__specialist-list">
+      <ul class="section-template__list">
         @foreach ($data['specialists'] as $specialist)
-          <li class="management-page__specialist-item">
+          <li class="section-template__list-item">
             <x-specialist-card :specialist="$specialist" />
           </li>
         @endforeach

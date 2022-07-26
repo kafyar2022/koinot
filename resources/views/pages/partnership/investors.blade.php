@@ -17,7 +17,7 @@
     </div>
 
     <div class="container">
-      <div class="investors-page__content">
+      <div class="investors-page__content content">
         <h2>О Таджикистане</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
@@ -55,7 +55,7 @@
         </li>
       </ul>
 
-      <div class="investors-page__content">
+      <div class="investors-page__content content">
         <h2>Связь с нами</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
           pellentesque facilisis egestas risus egestas sit gravida.</p>

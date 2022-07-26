@@ -12,7 +12,7 @@
       <time class="news-show-page__date" datetime="{{ $data['news']->created_at }}">{{ date_format($data['news']->created_at, 'Y.m.d') }}</time>
       <h1 class="news-show-page__title">{{ $data['news']->title }}</h1>
 
-      <div class="news-show-page__content">{!! $data['news']->content !!}</div>
+      <div class="news-show-page__content content">{!! $data['news']->content !!}</div>
 
       <div class="news-show-page__gallery gallery">
         @foreach ($data['news']->images as $key => $image)
@@ -27,14 +27,14 @@
       </div>
     </div>
 
-    <section class="news-show-page__last-news container">
-      <div class="news-show-page__last-news-content">
+    <section class="section-template container">
+      <div class="section-template__content content">
         <h2>Lorem Ipsum</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
           pellentesque facilisis egestas risus egestas sit gravida.</p>
       </div>
 
-      <div class="news-show-page__last-news-list">
+      <div class="section-template__list">
         @foreach ($data['last-news'] as $news)
           <x-news-card :news="$news" />
         @endforeach

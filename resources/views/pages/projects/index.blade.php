@@ -20,20 +20,22 @@
       </svg>
     </div>
 
-    <div class="projects-page__content container">
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-        pellentesque facilisis egestas risus egestas sit gravida.</p>
-    </div>
+    <section class="section-template container">
+      <div class="section-template__content content">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
+          pellentesque facilisis egestas risus egestas sit gravida.</p>
+      </div>
 
-    <div class="projects-page__projects container" id="projects">
-      @foreach ($data['projects'] as $project)
-        <x-project-card :project="$project" />
-      @endforeach
-    </div>
+      <div class="section-template__list" id="projects">
+        @foreach ($data['projects'] as $project)
+          <x-project-card :project="$project" />
+        @endforeach
+      </div>
 
-    <div class="container">
-      {{ $data['projects']->fragment('projects')->links('components.pagination') }}
-    </div>
+      <div class="section-template__pagination">
+        {{ $data['projects']->fragment('projects')->links('components.pagination') }}
+      </div>
+    </section>
   </main>
 @endsection

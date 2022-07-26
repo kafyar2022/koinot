@@ -1,0 +1,22 @@
+.content {
+  position: relative;
+
+  h1,
+  h2,
+  h3 {
+    .title();
+  }
+
+  p {
+    margin: 0;
+
+    &:empty {
+      height: 22px;
+    }
+  }
+
+  a {
+    .button();
+    margin-top: 32px;
+  }
+}
