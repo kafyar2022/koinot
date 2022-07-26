@@ -1211,7 +1211,7 @@ a {
 .project-card__link:hover {
   text-decoration: underline;
 }
-.partnership-list {
+.contacts-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1219,7 +1219,7 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
-.partnership-list__item {
+.contacts-list__item {
   background-color: #3c324c;
   border-radius: 4px;
   position: relative;
@@ -1227,7 +1227,7 @@ a {
   padding-left: 112px;
   color: #fff;
 }
-.partnership-list__icon {
+.contacts-list__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1242,13 +1242,13 @@ a {
   left: 48px;
   transform: translateY(-50%);
 }
-.partnership-list__title {
+.contacts-list__title {
   font-weight: 400;
   font-size: 16px;
   margin-top: 0;
   margin-bottom: 8px;
 }
-.partnership-list__phone {
+.contacts-list__phone {
   font-weight: 700;
   font-size: 20px;
   margin-top: 0;
@@ -2045,6 +2045,9 @@ a {
   margin-top: 32px;
 }
 .startups-page__partnership-list {
+  margin-bottom: 32px;
+}
+.startups-page__contacts-list {
   margin-bottom: 32px;
 }
 .contribution-page__board-content {
