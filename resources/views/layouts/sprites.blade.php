@@ -55,5 +55,18 @@
     <symbol id="image" viewBox="0 0 41 40" fill="none">
       <path fill="currentColor" d="M32 22v14H4V8h10.04c.1-1.42.44-2.76.96-4H4C1.8 4 0 5.8 0 8v28c0 2.2 1.8 4 4 4h28c2.2 0 4-1.8 4-4V26l-4-4Zm-3 10H7l5.5-7.06 3.92 4.72 5.5-7.08L29 32Zm5.6-18.22c.88-1.4 1.4-3.02 1.4-4.78 0-4.98-4.02-9-9-9s-9 4.02-9 9 4.02 9 8.98 9c1.76 0 3.4-.52 4.78-1.4L38 22.84 40.84 20l-6.24-6.22ZM27 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5Z" />
     </symbol>
+
+    <symbol id="file" viewBox="0 0 16 19" fill="none">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M9.667 1.48H3a1.667 1.667 0 0 0-1.667 1.666v13.333A1.666 1.666 0 0 0 3 18.146h10a1.666 1.666 0 0 0 1.667-1.667v-10l-5-5Z" />
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M9.667 1.48v5h5M11.333 10.646H4.667M11.333 13.98H4.667M6.333 7.313H4.667" />
+    </symbol>
+
+    <symbol id="star" viewBox="0 0 18 18" fill="none">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m9 1.167 2.575 5.216 5.758.842-4.166 4.058.983 5.734L9 14.308l-5.15 2.709.983-5.734L.667 7.225l5.758-.842L9 1.167Z" />
+    </symbol>
+
+    <symbol id="search" viewBox="0 0 16 17" fill="none">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M7.167 14.333A6.667 6.667 0 1 0 7.167 1a6.667 6.667 0 0 0 0 13.333ZM15.5 16l-3.625-3.625" />
+    </symbol>
   </svg>
 </div>

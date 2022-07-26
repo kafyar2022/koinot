@@ -1947,6 +1947,118 @@ a {
   gap: 32px;
   margin-bottom: 32px;
 }
+.investors-page {
+  margin-bottom: 128px;
+}
+.investors-page__board-content h1,
+.investors-page__board-content h2 {
+  font-weight: 700;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.investors-page__board-content p {
+  font-weight: 300;
+  font-size: 28px;
+  margin: 0;
+}
+.investors-page__board-content a {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-align: right;
+  margin-top: 48px;
+  margin-left: 220px;
+}
+.investors-page__board-content a::after {
+  content: "";
+  display: block;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-left: 66px;
+  box-shadow: 4px 4px 40px rgba(237, 46, 56, 0.6);
+  background-color: #ed2e38;
+  background-repeat: no-repeat;
+  background-position: 19px center;
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.838a1 1 0 0 1 1.543-.84L14.165 9.16a1 1 0 0 1 0 1.68L1.543 19.002A1 1 0 0 1 0 18.162V1.838Z' fill='%23fff'/%3E%3C/svg%3E");
+}
+.investors-page__board-content a:hover::after {
+  box-shadow: none;
+}
+.investors-page__board-content a::after {
+  content: "";
+  display: block;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-left: 16px;
+  box-shadow: 4px 4px 40px rgba(237, 46, 56, 0.6);
+  background-color: #ed2e38;
+  background-repeat: no-repeat;
+  background-position: 19px center;
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.838a1 1 0 0 1 1.543-.84L14.165 9.16a1 1 0 0 1 0 1.68L1.543 19.002A1 1 0 0 1 0 18.162V1.838Z' fill='%23fff'/%3E%3C/svg%3E");
+}
+.investors-page__content {
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+.investors-page__content h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+.investors-page__content p {
+  margin: 0;
+}
+.investors-page__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.investors-page__list-item {
+  background-color: #3c324c;
+  border-radius: 4px;
+  position: relative;
+  padding: 34px 48px;
+  padding-left: 112px;
+  color: #fff;
+}
+.investors-page__list-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ed2e38;
+  box-shadow: 4px 4px 40px rgba(237, 46, 56, 0.6);
+  position: absolute;
+  top: 50%;
+  left: 48px;
+  transform: translateY(-50%);
+}
+.investors-page__list-title {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.investors-page__list-phone {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 16px;
+  margin-bottom: 0;
+}
 
 
 /*# sourceMappingURL=style.css.map*/
