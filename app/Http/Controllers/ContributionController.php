@@ -22,7 +22,17 @@ class ContributionController extends Controller
 
   public function show($slug)
   {
-    $data = Helper::getContents(app()->getLocale(), 'contribution.show');
+    $locale = app()->getLocale();
+
+    $data = Helper::getContents($locale, 'contribution.show');
+
+    $data['contribution'] = Contribution::where('slug', $slug)
+      ->first();
+
+    $data['last-contributions'] = Contribution::where('locale', $locale)
+      ->latest()
+      ->take(3)
+      ->get();
 
     return view('pages.contribution.show', compact('data'));
   }

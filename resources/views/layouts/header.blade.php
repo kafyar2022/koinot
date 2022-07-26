@@ -149,7 +149,7 @@
           </svg>
         </li>
 
-        <li class="page-nav__item @if ($route == 'contribution') page-nav__item--current @endif">
+        <li class="page-nav__item @if ($route == 'contribution' || $route == 'contribution.show') page-nav__item--current @endif">
           <a class="page-nav__link" @if ($route != 'contribution') href="{{ route('contribution') }}" @endif>@lang('Вклад в общество')</a>
         </li>
 

@@ -44,5 +44,5 @@
 @endsection
 
 @section('script')
-  <script src="{{ asset('js/pages/news/show.js') }}"></script>
+  <script src="{{ asset('js/pages/news/show.js') }}" type="module"></script>
 @endsection
