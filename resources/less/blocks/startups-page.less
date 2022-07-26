@@ -1,0 +1,59 @@
+.startups-page {
+  margin-bottom: 128px;
+}
+
+.startups-page__board-content {
+
+  h1,
+  h2 {
+    font-weight: 700;
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 28px;
+    margin: 0;
+
+    &:empty {
+      height: 38px
+    }
+  }
+
+  a {
+    .video();
+    margin-top: 48px;
+    margin-left: 560px;
+    width: max-content;
+  }
+}
+
+.startups-grid {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.startups-page__form {
+  margin-top: 32px;
+}
+
+.startups-page__content {
+  margin-top: 32px;
+
+  h2 {
+    .title();
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin: 0;
+
+    &:empty {
+      height: 21px;
+    }
+  }
+}

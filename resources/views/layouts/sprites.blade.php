@@ -68,5 +68,9 @@
     <symbol id="search" viewBox="0 0 16 17" fill="none">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M7.167 14.333A6.667 6.667 0 1 0 7.167 1a6.667 6.667 0 0 0 0 13.333ZM15.5 16l-3.625-3.625" />
     </symbol>
+
+    <symbol id="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6 9 17l-5-5" />
+    </symbol>
   </svg>
 </div>

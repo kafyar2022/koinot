@@ -1,0 +1,33 @@
+.checkbox {
+  position: relative;
+  padding-left: 40px;
+  margin: 0;
+  color: @secondary-light;
+  font-size: 12px;
+  line-height: 14.4px;
+
+  &::first-line {
+    color: @basic-white;
+  }
+}
+
+.checkbox__icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: @basic-white;
+  border-radius: 4px;
+  color: @success;
+
+  svg {
+    display: none;
+    margin-left: 3px;
+  }
+}
+
+.checkbox__input:checked + .checkbox__icon svg {
+  display: block;
+}

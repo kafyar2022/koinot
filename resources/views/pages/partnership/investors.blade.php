@@ -22,32 +22,32 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
 
-      <ul class="investors-page__list">
-        <li class="investors-page__list-item">
-          <h3 class="investors-page__list-title">Инвесторам</h3>
-          <a class="investors-page__list-phone" href="tel:+99244000000">+992 (44) 000 000</a>
-          <a class="investors-page__list-email" href="mailto:invest@koinotinav.tj">invest@koinotinav.tj</a>
-          <span class="investors-page__list-icon">
+      <ul class="partnership-list">
+        <li class="partnership-list__item">
+          <h3 class="partnership-list__title">Инвесторам</h3>
+          <a class="partnership-list__phone" href="tel:+99244000000">+992 (44) 000 000</a>
+          <a class="partnership-list__email" href="mailto:invest@koinotinav.tj">invest@koinotinav.tj</a>
+          <span class="partnership-list__icon">
             <svg width="16" height="19">
               <use xlink:href="#file"></use>
             </svg>
           </span>
         </li>
-        <li class="investors-page__list-item">
-          <h3 class="investors-page__list-title">Партнерство</h3>
-          <a class="investors-page__list-phone" href="tel:+99244000000">+992 (44) 000 000</a>
-          <a class="investors-page__list-email" href="mailto:partner@koinotinav.tj">partner@koinotinav.tj</a>
-          <span class="investors-page__list-icon">
+        <li class="partnership-list__item">
+          <h3 class="partnership-list__title">Партнерство</h3>
+          <a class="partnership-list__phone" href="tel:+99244000000">+992 (44) 000 000</a>
+          <a class="partnership-list__email" href="mailto:partner@koinotinav.tj">partner@koinotinav.tj</a>
+          <span class="partnership-list__icon">
             <svg width="18" height="18">
               <use xlink:href="#star"></use>
             </svg>
           </span>
         </li>
-        <li class="investors-page__list-item">
-          <h3 class="investors-page__list-title">Общие вопросы</h3>
-          <a class="investors-page__list-phone" href="tel:+99244000000">+992 (44) 000 000</a>
-          <a class="investors-page__list-email" href="mailto:info@koinotinav.tj">info@koinotinav.tj</a>
-          <span class="investors-page__list-icon">
+        <li class="partnership-list__item">
+          <h3 class="partnership-list__title">Общие вопросы</h3>
+          <a class="partnership-list__phone" href="tel:+99244000000">+992 (44) 000 000</a>
+          <a class="partnership-list__email" href="mailto:info@koinotinav.tj">info@koinotinav.tj</a>
+          <span class="partnership-list__icon">
             <svg width="16" height="17">
               <use xlink:href="#search"></use>
             </svg>
