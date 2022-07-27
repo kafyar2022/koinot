@@ -1,0 +1,107 @@
+.carrier-page__board {
+  margin-bottom: 32px;
+}
+
+.carrier-page__board-content {
+  max-width: 520px;
+
+  h1,
+  h2 {
+    font-weight: 700;
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 28px;
+    margin: 0;
+  }
+
+  a {
+    margin-top: 32px;
+    min-width: 220px;
+    .button();
+  }
+}
+
+.carrier-page__formula {
+  background-color: @secondary;
+  color: @basic-white;
+  border-radius: 4px;
+  height: 160px;
+  align-items: center;
+  display: flex;
+  white-space: pre-wrap;
+  padding: 32px 48px;
+
+  &::before {
+    content: attr(data-before);
+    .circle();
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-right: 20px;
+  }
+}
+
+.carrier-page__principles {
+  margin: 64px 0;
+}
+
+.carrier-page__principles-content {
+  margin-bottom: 32px;
+}
+
+.carrier-page__principles-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: principle;
+}
+
+.carrier-page__principles-item {
+  min-height: 116px;
+  background-color: @secondary;
+  color: @basic-white;
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 32px 48px;
+
+  &::before {
+    .circle();
+    counter-increment: principle;
+    content: counter(principle);
+    margin-right: 20px;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 28px;
+  }
+}
+
+.carrier-page__internship {
+  display: grid;
+  grid-template-columns: auto 660px;
+  gap: 32px;
+  grid-auto-rows: 1fr;
+  margin-bottom: 128px;
+
+  &::after {
+    content: "";
+    display: block;
+    min-height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../../files/img/internship.jpg);
+    border-radius: 4px;
+  }
+}
