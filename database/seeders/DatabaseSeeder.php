@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,12 @@ class DatabaseSeeder extends Seeder
    */
   public function run()
   {
+    User::create([
+      'login' => 'admin@koinot.tj',
+      'role' => 'admin',
+      'password' => bcrypt('2j@H#130'),
+    ]);
+
     $this->call([
       ContentSeeder::class,
       HistoriesSeeder::class,

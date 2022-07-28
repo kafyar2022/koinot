@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarrierController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ContributionController;
+use App\Http\Controllers\DashController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PartnershipController;
@@ -34,6 +36,17 @@ Route::prefix(parseLocale())->group(function () {
   Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier');
   Route::get('/carrier/test', [CarrierController::class, 'test'])->name('carrier.test');
 });
+
+Route::post('/auth/check', [AuthController::class, 'check'])->name('auth.check');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+
+Route::group(['middleware' => ['AuthCheck']], function () {
+  Route::get('/dashboard', [DashController::class, 'index'])->name('dashboard');
+  Route::get('/dashboard/toggle-mode', [DashController::class, 'toggleMode'])->name('mode');
+  Route::get('/dashboard/toggle-state', [DashController::class, 'toggleState']);
+});
+
 
 function parseLocale()
 {

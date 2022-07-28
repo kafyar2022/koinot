@@ -39,6 +39,90 @@ class ContentSeeder extends Seeder
         'slug' => '',
         'page' => '',
         'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
+      ], [
+        'slug' => '',
+        'page' => '',
+        'content' => '',
       ],
     ];
 

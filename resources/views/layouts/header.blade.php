@@ -2,8 +2,8 @@
   <div class="page-header__top container">
     <a class="page-header__logo" @if ($route != 'main') href="{{ route('main') }}" @endif>
       <picture>
-        <source media="(max-width: 767px)" srcset="img/logotype-mobile.svg">
-        <source media="(max-width: 1279px)" srcset="img/logotype-tablet.svg">
+        <source media="(max-width: 767px)" srcset="{{ asset('img/logotype-mobile.svg') }}">
+        <source media="(max-width: 1279px)" srcset="{{ asset('img/logotype-tablet.svg') }}">
         <img src="{{ asset('img/logotype-desktop.svg') }}" width="190" height="32" alt="@lang('Коиноти нав')">
       </picture>
     </a>

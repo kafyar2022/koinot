@@ -1,5 +1,7 @@
 .content {
   position: relative;
+  min-height: 22px;
+  width: 100%;
 
   h1,
   h2,
@@ -19,4 +21,19 @@
     .button();
     margin-top: 32px;
   }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 4px 8px;
+    min-width: 16px;
+    border: 1px solid;
+  }
+}
+
+.action--cancel:hover+.content {
+  outline: 1px solid @error  !important;
 }

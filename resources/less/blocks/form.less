@@ -10,6 +10,7 @@
   color: @basic-white;
   margin-bottom: 32px;
 
+  h1,
   h2 {
     .title();
     margin-bottom: 8px;
@@ -53,9 +54,27 @@
   }
 }
 
+.form__error {
+  position: absolute;
+  bottom: 1px;
+  right: 16px;
+  color: @error;
+  font-size: 14px;
+  font-weight: 300;
+}
+
 .form__bottom {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-top: 32px;
+}
+
+.form__submit {
+
+  &:disabled {
+    background-color: @disabled;
+    cursor: no-drop;
+    box-shadow: none;
+  }
 }
