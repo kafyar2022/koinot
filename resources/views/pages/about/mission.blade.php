@@ -8,7 +8,7 @@
   <main class="mission-page">
     <div class="mission-page__board board" style="background-image: linear-gradient(rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0.7)), url('/files/img/mission-page-board.jpg')">
       <div class="board__container container">
-        <div class="content" data-content="mission-page-board-{{ $locale }}">{!! $data['mission-page-board-' . $locale] !!}</div>
+        <div class="mission-page__board-content" data-content="mission-page-board-{{ $locale }}">{!! $data['mission-page-board-' . $locale] !!}</div>
       </div>
     </div>
 
@@ -18,7 +18,7 @@
 
     <section class="mission-page__board board" style="background-image: linear-gradient(rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0.7)), url('/files/img/vision-board.jpg')">
       <div class="board__container container">
-        <div class="content" data-content="mission-page-vision-board-{{ $locale }}">{!! $data['mission-page-vision-board-' . $locale] !!}</div>
+        <div class="mission-page__board-content" data-content="mission-page-vision-board-{{ $locale }}">{!! $data['mission-page-vision-board-' . $locale] !!}</div>
       </div>
     </section>
 
@@ -28,7 +28,7 @@
 
     <section class="mission-page__board board" style="background-image: linear-gradient(rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0.7)), url('/files/img/values-board.jpg')">
       <div class="board__container container">
-        <div class="content" data-content="mission-page-values-board-{{ $locale }}">{!! $data['mission-page-values-board-' . $locale] !!}</div>
+        <div class="mission-page__board-content" data-content="mission-page-values-board-{{ $locale }}">{!! $data['mission-page-values-board-' . $locale] !!}</div>
       </div>
     </section>
 

@@ -8,9 +8,7 @@
   <main class="management-page">
     <div class="management-page__board board" style="background-image: url('/files/img/management-page-board.jpg')">
       <div class="board__container container">
-        <div class="management-page__board-content">
-          <div class="content" data-content="management-page-board-{{ $locale }}">{!! $data['management-page-board-' . $locale] !!}</div>
-        </div>
+        <div class="management-page__board-content" data-content="management-page-board-{{ $locale }}">{!! $data['management-page-board-' . $locale] !!}</div>
       </div>
 
       <svg class="board__mask" width="1250" height="540">

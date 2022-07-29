@@ -2,27 +2,39 @@
   margin-bottom: 32px;
 }
 
+.carrier-page__board {
+  z-index: 1;
+}
+
 .carrier-page__board-content {
-  max-width: 520px;
+  min-height: 22px;
 
   h1,
   h2 {
     font-weight: 700;
     font-size: 50px;
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+
+    &:last-of-type {
+      margin-bottom: 16px;
+    }
   }
 
   p {
     font-weight: 300;
     font-size: 28px;
     margin: 0;
+
+    &:empty {
+      height: 22px;
+    }
   }
 
   a {
+    .button();
     margin-top: 32px;
     min-width: 220px;
-    .button();
   }
 }
 

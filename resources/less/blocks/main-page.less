@@ -1,19 +1,26 @@
 .main-page__board-content {
-  max-width: 408px;
+  min-height: 22px;
 
   h1,
   h2 {
     font-weight: 700;
     font-size: 50px;
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+
+    &:last-of-type {
+      margin-bottom: 8px;
+    }
   }
 
   p {
     font-weight: 300;
     font-size: 28px;
-    text-transform: uppercase;
     margin: 0;
+
+    &:empty {
+      height: 22px;
+    }
   }
 
   a {
@@ -58,10 +65,15 @@
   &:first-child,
   &:nth-child(2) {
     grid-column: span 3;
+    z-index: 1;
   }
 
   &:first-child {
     padding: 40px;
+  }
+
+  &:nth-child(3) {
+    z-index: 1;
   }
 
   &:nth-last-child(2) {
@@ -75,14 +87,17 @@
 }
 
 .main-page__card-content {
-  width: 360px;
-  margin: auto;
+  min-height: 22px;
 
   h2 {
     font-size: 50px;
     font-weight: 700;
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+
+    &:last-of-type {
+      margin-bottom: 16px;
+    }
   }
 
   p {
@@ -92,10 +107,11 @@
   }
 
   a {
+    .video();
     margin-top: 48px;
     margin-left: auto;
     width: max-content;
-    .video();
+    max-width: 160px;
   }
 }
 

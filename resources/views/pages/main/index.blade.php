@@ -32,7 +32,9 @@
       </section>
 
       <section class="main-page__grid-item" style="background-image: url('files/img/main-page-opportunity.jpg')">
-        <div class="main-page__card-content" data-content="main-page-opportunity-{{ $locale }}">{!! $data['main-page-opportunity-' . $locale] !!}</div>
+        <div style="max-width: 360px; width: 100%; margin: auto;">
+          <div class="main-page__card-content" data-content="main-page-opportunity-{{ $locale }}">{!! $data['main-page-opportunity-' . $locale] !!}</div>
+        </div>
       </section>
     </div>
 

@@ -2,26 +2,38 @@
   margin-bottom: 64px;
 }
 
+.investors-page__board {
+  z-index: 1;
+}
+
 .investors-page__board-content {
+  min-height: 22px;
 
   h1,
   h2 {
     font-weight: 700;
     font-size: 50px;
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+
+    &:empty {
+      margin-bottom: 16px;
+    }
   }
 
   p {
     font-weight: 300;
     font-size: 28px;
     margin: 0;
+
+    &:empty {
+      height: 32px
+    }
   }
 
   a {
     .video();
     margin-top: 48px;
-    margin-left: 220px;
   }
 }
 

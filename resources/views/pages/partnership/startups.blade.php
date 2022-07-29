@@ -54,7 +54,7 @@
           </p>
 
           <div class="form__bottom">
-            <p class="checkbox">
+            <p class="form__use-term checkbox">
               <label class="checkbox__label">
                 <input class="checkbox__input visually-hidden" name="is_terms_accepted" type="checkbox">
                 <span class="checkbox__icon">

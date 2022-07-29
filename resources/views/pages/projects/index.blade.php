@@ -8,7 +8,7 @@
   <main class="projects-page">
     <div class="projects-page__board board" style="background-image: url('/files/img/projects{{ request('category') ? '-category' : '' }}-page-board.jpg')">
       <div class="board__container container">
-        <div class="projects-page__board-content content" data-content="@if (request('category'))projects-{{ request('category') }}-page-board-{{ $locale }}@else projects-page-board-{{ $locale }}@endif">
+        <div class="projects-page__board-content content" @if (request('category')) data-content="projects-{{ request('category') }}-page-board-{{ $locale }}" @else data-content="projects-page-board-{{ $locale }}" @endif>
           @if (request('category'))
             {!! $data['projects-' . request('category') . '-page-board-' . $locale] !!}
           @else
@@ -24,7 +24,7 @@
 
     <section class="section-template container">
       <div class="section-template__content">
-        <div class="content" data-content="@if (request('category'))projects-{{ request('category') }}-page-{{ $locale }}@else projects-page-{{ $locale }}@endif">
+        <div class="content" @if (request('category')) data-content="projects-{{ request('category') }}-page-{{ $locale }}" @else data-content="projects-page-{{ $locale }}" @endif>
           @if (request('category'))
             {!! $data['projects-' . request('category') . '-page-' . $locale] !!}
           @else

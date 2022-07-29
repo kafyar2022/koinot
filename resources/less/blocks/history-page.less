@@ -1,3 +1,35 @@
+.history-page__board-content {
+  min-height: 22px;
+
+  h1,
+  h2 {
+    font-weight: 700;
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &:last-of-type {
+      margin-bottom: 16px;
+    }
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 28px;
+    margin: 0;
+
+    &:empty {
+      height: 22px;
+    }
+  }
+
+  a {
+    .video();
+    margin-top: 48px;
+    max-width: 160px;
+  }
+}
+
 .history-page__grid {
   display: grid;
   grid-template-columns: 50% 50%;
