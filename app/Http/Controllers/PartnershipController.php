@@ -9,7 +9,9 @@ class PartnershipController extends Controller
 {
   public function index($category)
   {
-    $data = Helper::getContents(app()->getLocale(), 'partnership.' . $category);
+    $locale = app()->getLocale();
+
+    $data = Helper::getContents($locale, 'partnership.' . $category);
 
     return view('pages.partnership.' . $category, compact('data'));
   }

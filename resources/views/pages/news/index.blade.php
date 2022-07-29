@@ -8,10 +8,8 @@
   <main class="news-page">
     <div class="news-page__board board" style="background-image: url('/files/img/news-page-board.jpg')">
       <div class="board__container container">
-        <div class="news-page__board-content" data-content="news-page-board-{{ $locale }}">
-          <h1>Новости</h1>
-          <p>Lorem ipsum dolor sit amet,<br>
-            consectetur adipiscing elit.</p>
+        <div class="news-page__board-content">
+          <div class="content" data-content="news-page-board-{{ $locale }}">{!! $data['news-page-board-' . $locale] !!}</div>
         </div>
       </div>
 
@@ -21,10 +19,8 @@
     </div>
 
     <section class="section-template container">
-      <div class="section-template__content content">
-        <h2>Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-          pellentesque facilisis egestas risus egestas sit gravida.</p>
+      <div class="section-template__content">
+        <div class="content" data-content="news-page-content-{{ $locale }}">{!! $data['news-page-content-' . $locale] !!}</div>
       </div>
 
       <ul class="section-template__list" id="news">

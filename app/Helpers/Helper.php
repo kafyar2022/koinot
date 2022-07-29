@@ -14,14 +14,23 @@ class Helper
 {
   public static function getContents($locale, $pageName)
   {
+    $response = [];
     $contents = Content::where('locale', $locale)
       ->where('page', $pageName)
       ->orWhere('page', null)
       ->get();
 
-    $response = [];
     foreach ($contents as $content) {
       $response[$content->slug] = $content->content;
+    }
+
+    $texts = Text::where('locale', $locale)
+      ->where('page', $pageName)
+      ->orWhere('page', null)
+      ->get();
+
+    foreach ($texts as $text) {
+      $response[$text->slug] = $text->text;
     }
 
     return $response;

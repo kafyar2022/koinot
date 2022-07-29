@@ -8,9 +8,8 @@
   <main class="management-page">
     <div class="management-page__board board" style="background-image: url('/files/img/management-page-board.jpg')">
       <div class="board__container container">
-        <div class="management-page__board-content" data-content="management-page-board-{{ $locale }}">
-          <h1>Наша<br>команда</h1>
-          <p>Верим, можем, создаем</p>
+        <div class="management-page__board-content">
+          <div class="content" data-content="management-page-board-{{ $locale }}">{!! $data['management-page-board-' . $locale] !!}</div>
         </div>
       </div>
 
@@ -20,10 +19,8 @@
     </div>
 
     <section class="section-template container">
-      <div class="section-template__content content">
-        <h2>Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-          pellentesque facilisis egestas risus egestas sit gravida.</p>
+      <div class="section-template__content">
+        <div class="content" data-content="management-page-specialists-{{ $locale }}">{!! $data['management-page-specialists-' . $locale] !!}</div>
       </div>
 
       <ul class="section-template__list">

@@ -12,22 +12,24 @@ class ProjectsController extends Controller
   {
     $locale = app()->getLocale();
 
-    $data = Helper::getContents($locale, 'projects');
 
     switch ($request->category) {
       case 'by-us':
+        $data = Helper::getContents($locale, 'projects.' . $request->category);
         $data['projects'] = Project::where('locale', $locale)
           ->where('by_us', true)
           ->paginate(9);
         break;
 
       case 'with-us':
+        $data = Helper::getContents($locale, 'projects.' . $request->category);
         $data['projects'] = Project::where('locale', $locale)
           ->where('by_us', false)
           ->paginate(9);
         break;
 
       default:
+        $data = Helper::getContents($locale, 'projects');
         $data['projects'] = Project::where('locale', $locale)
           ->paginate(9);
         break;

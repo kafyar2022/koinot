@@ -8,11 +8,7 @@
   <main class="contribution-page">
     <div class="contribution-page__board board" style="background-image: url('/files/img/contribution-page-board.jpg')">
       <div class="board__container container">
-        <div class="contribution-page__board-content">
-          <h1>Вклад в общество</h1>
-          <p>Lorem ipsum dolor sit amet,<br>
-            consectetur adipiscing elit.</p>
-        </div>
+        <div class="contribution-page__board-content" data-content="contribution-page-board-{{ $locale }}">{!! $data['contribution-page-board-' . $locale] !!}</div>
       </div>
 
       <svg class="board__mask" width="1250" height="540">
@@ -21,10 +17,8 @@
     </div>
 
     <section class="section-template container" id="contributions">
-      <div class="section-template__content content">
-        <h2>Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-          pellentesque facilisis egestas risus egestas sit gravida.</p>
+      <div class="section-template__content">
+        <div class="content" data-content="contribution-page-{{ $locale }}">{!! $data['contribution-page-' . $locale] !!}</div>
       </div>
 
       <ul class="section-template__list">

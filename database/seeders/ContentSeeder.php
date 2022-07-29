@@ -18,116 +18,216 @@ class ContentSeeder extends Seeder
       [
         'slug' => 'main-page-board',
         'page' => 'main',
-        'content' => '<h1>Группа компаний <br> Коиноти нав</h1><p>Верим, можем, создаем</p><a href="#">Подробнее</a>',
+        'content' => '',
       ], [
         'slug' => 'main-page-management',
         'page' => 'main',
-        'content' => '<h2>Наш менеджмент</h2><p>В нас сочетаются инновации и традиции. <br> Мы знак истинного качества, символ верности <br> и преданности своему делу, своему обществу и стране.</p><a href="#">Подробнее</a>',
+        'content' => '',
       ], [
         'slug' => 'main-page-investors',
         'page' => 'main',
-        'content' => '<h2>Инвесторам</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.</p><a href="#">Подробнее</a>',
+        'content' => '',
       ], [
         'slug' => 'main-page-contribution',
         'page' => 'main',
-        'content' => '<h2>Вклад в общество</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare vitae sed aliquam sed ullamcorper.</p><a href="#">Подробнее</a>',
+        'content' => '',
       ], [
         'slug' => 'main-page-opportunity',
         'page' => 'main',
-        'content' => '<h2>Страна возможностей</h2><p>Современный Таджикистан</p><a href="#">Смотреть <br> видео</a>',
-      ], [
-        'slug' => '',
-        'page' => '',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'main-page-news',
+        'page' => 'main',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'main-page-projects',
+        'page' => 'main',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'history-page-board',
+        'page' => 'about.history',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'history-page-content',
+        'page' => 'about.history',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'management-page-board',
+        'page' => 'about.management',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'management-page-specialists',
+        'page' => 'about.management',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-board',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-mission',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-vision-board',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-vision',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-values-board',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-value-1',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-value-2',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-value-3',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-value-4',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-value-5',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-value-6',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'mission-page-values',
+        'page' => 'about.mission',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'news-page-board',
+        'page' => 'news',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'news-page-content',
+        'page' => 'news',
         'content' => '',
       ], [
-        'slug' => '',
-        'page' => '',
+        'slug' => 'news-show-page',
+        'page' => 'news.show',
+        'content' => '',
+      ], [
+        'slug' => 'projects-page-board',
+        'page' => 'projects',
+        'content' => '',
+      ], [
+        'slug' => 'projects-by-us-page-board',
+        'page' => 'projects.by-us',
+        'content' => '',
+      ], [
+        'slug' => 'projects-with-us-page-board',
+        'page' => 'projects.with-us',
+        'content' => '',
+      ], [
+        'slug' => 'projects-page',
+        'page' => 'projects',
+        'content' => '',
+      ], [
+        'slug' => 'projects-by-us-page',
+        'page' => 'projects.by-us',
+        'content' => '',
+      ], [
+        'slug' => 'projects-with-us-page',
+        'page' => 'projects.with-us',
+        'content' => '',
+      ], [
+        'slug' => 'investors-page-board',
+        'page' => 'partnership.investors',
+        'content' => '',
+      ], [
+        'slug' => 'investors-page-about',
+        'page' => 'partnership.investors',
+        'content' => '',
+      ], [
+        'slug' => 'investors-page-connection',
+        'page' => 'partnership.investors',
+        'content' => '',
+      ], [
+        'slug' => 'startups-page-board',
+        'page' => 'partnership.startups',
+        'content' => '',
+      ], [
+        'slug' => 'startups-page',
+        'page' => 'partnership.startups',
+        'content' => '',
+      ], [
+        'slug' => 'startups-page-form',
+        'page' => 'partnership.startups',
+        'content' => '',
+      ], [
+        'slug' => 'startups-page-connection',
+        'page' => 'partnership.startups',
+        'content' => '',
+      ], [
+        'slug' => 'contribution-page-board',
+        'page' => 'contribution',
+        'content' => '',
+      ], [
+        'slug' => 'contribution-page',
+        'page' => 'contribution',
+        'content' => '',
+      ], [
+        'slug' => 'contribution-show-page',
+        'page' => 'contribution.show',
+        'content' => '',
+      ], [
+        'slug' => 'contacts-page-office',
+        'page' => 'contacts',
+        'content' => '',
+      ], [
+        'slug' => 'contacts-page-connection',
+        'page' => 'contacts',
+        'content' => '',
+      ], [
+        'slug' => 'carrier-page-board',
+        'page' => 'carrier',
+        'content' => '',
+      ], [
+        'slug' => 'carrier-page-formula',
+        'page' => 'carrier',
+        'content' => '',
+      ], [
+        'slug' => 'carrier-page-principles',
+        'page' => 'carrier',
+        'content' => '',
+      ], [
+        'slug' => 'carrier-page-internship',
+        'page' => 'carrier',
+        'content' => '',
+      ], [
+        'slug' => 'test-page-board',
+        'page' => 'carrier.test',
+        'content' => '',
+      ], [
+        'slug' => 'test-page-stages',
+        'page' => 'carrier.test',
+        'content' => '',
+      ], [
+        'slug' => 'test-page-test',
+        'page' => 'carrier.test',
+        'content' => '',
+      ], [
+        'slug' => 'test-page-form',
+        'page' => 'carrier.test',
         'content' => '',
       ],
     ];
 
-    foreach (config('app.available_locales') as $locale) {
-      foreach ($contents as $content) {
+    foreach ($contents as $content) {
+      foreach (config('app.available_locales') as $locale) {
         Content::create([
           'locale' => $locale,
           'slug' => $content['slug'] . '-' . $locale,

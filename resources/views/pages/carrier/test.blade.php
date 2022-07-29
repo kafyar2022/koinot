@@ -8,11 +8,7 @@
   <main class="test-page">
     <div class="test-page__board board" style="background-image: url('/files/img/test-page-board.jpg')">
       <div class="board__container container">
-        <div class="test-page__board-content">
-          <h1>Lorem Ipsum</h1>
-          <p>Lorem ipsum dolor sit amet,<br>
-            consectetur adipiscing elit.</p>
-        </div>
+        <div class="test-page__board-content" data-content="test-page-board-{{ $locale }}">{!! $data['test-page-board-' . $locale] !!}</div>
       </div>
 
       <svg class="board__mask" width="1250" height="540">
@@ -22,17 +18,15 @@
 
     <div class="container">
       <section class="carrier-stages">
-        <div class="carrier-stages__content content">
-          <h2>Карьерные этапы</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-            pellentesque facilisis egestas risus egestas sit gravida.</p>
+        <div class="carrier-stages__content">
+          <div class="content" data-content="test-page-stages-{{ $locale }}">{!! $data['test-page-stages-' . $locale] !!}</div>
         </div>
 
         <ul class="carrier-stages__list">
-          <li class="carrier-stages__item">Стажировка и<br>адаптация</li>
-          <li class="carrier-stages__item">Менеджер</li>
-          <li class="carrier-stages__item">Ведущий<br>менеджер</li>
-          <li class="carrier-stages__item">Управляющий<br>менеджер</li>
+          <li class="carrier-stages__item" data-text="carrier-stage-1-{{ $locale }}">{!! $data['carrier-stage-1-' . $locale] !!}</li>
+          <li class="carrier-stages__item" data-text="carrier-stage-2-{{ $locale }}">{!! $data['carrier-stage-2-' . $locale] !!}</li>
+          <li class="carrier-stages__item" data-text="carrier-stage-3-{{ $locale }}">{!! $data['carrier-stage-3-' . $locale] !!}</li>
+          <li class="carrier-stages__item" data-text="carrier-stage-4-{{ $locale }}">{!! $data['carrier-stage-4-' . $locale] !!}</li>
         </ul>
 
         <img class="carrier-stages__img board" src="{{ asset('files/img/carrier-stage.jpg') }}" width="1280" height="540" alt="Карьерные этапы">
@@ -50,18 +44,13 @@
       </section>
 
       <section class="test">
-        <div class="test__content content">
-          <h2>Lorem ipsum</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-            pellentesque facilisis egestas risus egestas sit gravida.</p>
+        <div class="test__content">
+          <div class="content" data-content="test-page-test-{{ $locale }}">{!! $data['test-page-test-' . $locale] !!}</div>
         </div>
 
         <form class="test__form form">
           <div class="form__content">
-            <h2>Пройди тест и стань<br>частью нашей команды</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare<br>
-              vitae sed aliquam sed ullamcorper.Lorem ipsum dolor sit amet,<br>
-              consectetur adipiscing elit. Ornare vitae sed aliquam sed</p>
+            <div class="content" data-content="test-page-form-{{ $locale }}">{!! $data['test-page-form-' . $locale] !!}</div>
           </div>
 
           <div>

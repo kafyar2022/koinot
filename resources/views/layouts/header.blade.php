@@ -9,21 +9,21 @@
     </a>
 
     <div class="page-header__details details">
-      <a class="details__item" href="mailto:info@koinotinav.tj">
+      <a class="details__item" href="mailto:{{ $data['details-email-' . $locale] }}">
         <span class="details__icon">
           <svg width="18" height="16">
             <use xlink:href="#email"></use>
           </svg>
         </span>
-        <span class="details__info">info@koinotinav.tj</span>
+        <span class="details__info" data-text="details-email-{{ $locale }}">{{ $data['details-email-' . $locale] }}</span>
       </a>
-      <a class="details__item" href="tel:+992918556464">
+      <a class="details__item" href="tel:{{ str_replace([' ', '(', ')', '-'], '', $data['details-phone-' . $locale]) }}">
         <span class="details__icon">
           <svg width="17" height="16">
             <use xlink:href="#phone"></use>
           </svg>
         </span>
-        <span class="details__info">+992 918 55 64 64</span>
+        <span class="details__info" data-text="details-phone-{{ $locale }}">{{ $data['details-phone-' . $locale] }}</span>
       </a>
     </div>
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
+use App\Models\Text;
 use Illuminate\Http\Request;
 
 class DashController extends Controller
@@ -29,5 +31,26 @@ class DashController extends Controller
     }
 
     return back();
+  }
+  public function updateContent(Request $request)
+  {
+    $content = Content::where('slug', $request->json('slug'))
+      ->first();
+
+    $content->content = $request->json('content');
+    $content->update();
+
+    return json_encode($content);
+  }
+
+  public function updateText(Request $request)
+  {
+    $text = Text::where('slug', $request->json('slug'))
+      ->first();
+
+    $text->text = $request->json('text');
+    $text->update();
+
+    return json_encode($text);
   }
 }

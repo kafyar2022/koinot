@@ -27,10 +27,8 @@
     </div>
 
     <section class="section-template container">
-      <div class="section-template__content content">
-        <h2>Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-          pellentesque facilisis egestas risus egestas sit gravida.</p>
+      <div class="section-template__content">
+        <div class="content" data-content="contribution-show-page-{{ $locale }}">{!! $data['contribution-show-page-' . $locale] !!}</div>
       </div>
 
       <div class="section-template__list">

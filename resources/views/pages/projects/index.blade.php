@@ -8,10 +8,12 @@
   <main class="projects-page">
     <div class="projects-page__board board" style="background-image: url('/files/img/projects{{ request('category') ? '-category' : '' }}-page-board.jpg')">
       <div class="board__container container">
-        <div class="projects-page__board-content" data-content="projects{{ request('category') ? '-category' : '' }}-page-board-{{ $locale }}">
-          <h1>Наши проекты</h1>
-          <p>Lorem ipsum dolor sit amet,<br>
-            consectetur adipiscing elit.</p>
+        <div class="projects-page__board-content content" data-content="@if (request('category'))projects-{{ request('category') }}-page-board-{{ $locale }}@else projects-page-board-{{ $locale }}@endif">
+          @if (request('category'))
+            {!! $data['projects-' . request('category') . '-page-board-' . $locale] !!}
+          @else
+            {!! $data['projects-page-board-' . $locale] !!}
+          @endif
         </div>
       </div>
 
@@ -21,10 +23,14 @@
     </div>
 
     <section class="section-template container">
-      <div class="section-template__content content">
-        <h2>Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-          pellentesque facilisis egestas risus egestas sit gravida.</p>
+      <div class="section-template__content">
+        <div class="content" data-content="@if (request('category'))projects-{{ request('category') }}-page-{{ $locale }}@else projects-page-{{ $locale }}@endif">
+          @if (request('category'))
+            {!! $data['projects-' . request('category') . '-page-' . $locale] !!}
+          @else
+            {!! $data['projects-page-' . $locale] !!}
+          @endif
+        </div>
       </div>
 
       <div class="section-template__list" id="projects">

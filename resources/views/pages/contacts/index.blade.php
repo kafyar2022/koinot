@@ -11,18 +11,14 @@
     </div>
 
     <div class="container">
-      <div class="contacts-page__content content">
-        <h1>Головной офис</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-          pellentesque facilisis egestas risus egestas sit gravida.</p>
+      <div class="contacts-page__content">
+        <div class="content" data-content="contacts-page-office-{{ $locale }}">{!! $data['contacts-page-office-' . $locale] !!}</div>
       </div>
 
-      <x-contacts-list />
+      <x-contacts-list :data="$data" />
 
-      <div class="contacts-page__content content">
-        <h2>Связь с нами</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim aliquam<br>
-          pellentesque facilisis egestas risus egestas sit gravida.</p>
+      <div class="contacts-page__content">
+        <div class="content" data-content="contacts-page-office-{{ $locale }}">{!! $data['contacts-page-office-' . $locale] !!}</div>
       </div>
     </div>
   </main>
