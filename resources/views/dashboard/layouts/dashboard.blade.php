@@ -18,28 +18,22 @@
 
     <ul class="dashboard__menu">
       <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Баннеры</a>
+        <a class="dashboard__link" href="{{ route('dashboard.histories') }}">История компании</a>
       </li>
       <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Наши партнеры</a>
+        <a class="dashboard__link" href="#">Новости</a>
       </li>
       <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Новости Kreston</a>
-      </li>
-      <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Сертификаты</a>
+        <a class="dashboard__link" href="#">Проекты</a>
       </li>
       <li class="dashboard__menu-item">
         <a class="dashboard__link" href="#">Специалисты</a>
       </li>
       <li class="dashboard__menu-item">
+        <a class="dashboard__link" href="#">Вклад в общество</a>
+      </li>
+      <li class="dashboard__menu-item">
         <a class="dashboard__link" href="#">Услуги</a>
-      </li>
-      <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Направления</a>
-      </li>
-      <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Нормативные документы</a>
       </li>
       <li class="dashboard__menu-item">
         <a class="dashboard__link admin-panel__link--logout" href="{{ route('auth.logout', $locale) }}">Выйти</a>

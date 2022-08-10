@@ -17,7 +17,7 @@ class CreateHistoriesTable extends Migration
       $table->id();
       $table->string('locale');
       $table->string('years');
-      $table->text('history');
+      $table->text('history')->nullable();
       $table->timestamps();
     });
   }
