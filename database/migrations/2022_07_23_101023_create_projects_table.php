@@ -18,8 +18,8 @@ class CreateProjectsTable extends Migration
       $table->string('locale');
       $table->boolean('by_us');
       $table->string('title');
-      $table->string('logo');
-      $table->string('url');
+      $table->string('logo')->nullable();
+      $table->string('url')->nullable();
       $table->timestamps();
     });
   }

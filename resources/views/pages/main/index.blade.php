@@ -61,7 +61,7 @@
             <ul class="glide__slides">
               @foreach ($data['projects'] as $project)
                 <li class="glide__slide">
-                  <a class="main-page__projects-item" href="{{ $project->url }}" target="_blank">
+                  <a class="main-page__projects-item" @if ($project->url) href="{{ $project->url }}" target="_blank" @endif>
                     <img class="main-page__projects-img" src="{{ asset('files/projects/' . $project->logo) }}" width="165" height="112" alt="{{ $project->title }}">
                   </a>
                 </li>

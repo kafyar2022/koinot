@@ -17,14 +17,14 @@
     </a>
 
     <ul class="dashboard__menu">
-      <li class="dashboard__menu-item">
+      <li class="dashboard__menu-item {{ $route == 'dashboard.histories' ? 'dashboard__menu-item--current' : '' }}">
         <a class="dashboard__link" href="{{ route('dashboard.histories') }}">История компании</a>
       </li>
-      <li class="dashboard__menu-item">
+      <li class="dashboard__menu-item {{ $route == 'dashboard.news' ? 'dashboard__menu-item--current' : '' }}">
         <a class="dashboard__link" href="{{ route('dashboard.news') }}">Новости</a>
       </li>
-      <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Проекты</a>
+      <li class="dashboard__menu-item {{ $route == 'dashboard.projects' ? 'dashboard__menu-item--current' : '' }}">
+        <a class="dashboard__link" href="{{ route('dashboard.projects') }}">Проекты</a>
       </li>
       <li class="dashboard__menu-item">
         <a class="dashboard__link" href="#">Специалисты</a>

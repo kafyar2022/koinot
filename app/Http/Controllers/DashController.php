@@ -7,6 +7,7 @@ use App\Models\Content;
 use App\Models\History;
 use App\Models\News;
 use App\Models\NewsImg;
+use App\Models\Project;
 use App\Models\Text;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
@@ -196,10 +197,84 @@ class DashController extends Controller
             $img->save();
           }
         }
-        
+
         $news->update();
 
         return back()->with('success', 'Новость успешно сохранена');
+    }
+  }
+
+  public function projects(Request $request)
+  {
+    switch ($request->action) {
+      case 'create':
+        $locale = $request->locale ?? 'ru';
+        $data['locale'] = $locale;
+        $data['project'] = null;
+
+        return view('dashboard.pages.projects.show', compact('data'));
+
+      case 'edit':
+        $project = Project::find($request->project);
+        $data['locale'] = $project->locale;
+        $data['project'] = $project;
+        return view('dashboard.pages.projects.show', compact('data'));
+
+      case 'delete':
+        $project = Project::find($request->project);
+        $project->logo && unlink('files/projects/' . $project->logo);
+        $project->delete();
+
+        return back();
+
+      default:
+        $locale = $request->locale ?? 'ru';
+        $data['locale'] = $locale;
+        $data['projects'] = Project::where('locale', $locale)->latest()->get();
+
+        return view('dashboard.pages.projects.index', compact('data'));
+    }
+  }
+
+  public function projectsPost(Request $request)
+  {
+    $request->validate(['title' => 'required']);
+
+    switch ($request->action) {
+      case 'store':
+        $project = new Project();
+        $project->locale = $request->locale;
+        $project->by_us = $request->by_us;
+        $project->title = $request->title;
+        $file = $request->file('logo');
+        if ($file) {
+          $fileName = uniqid() . '.' . $file->extension();
+          $file->move(public_path('files/projects'), $fileName);
+          $project->logo = $fileName;
+        }
+        $project->url = $request->url;
+        $project->save();
+
+        return back()->with('success', 'Данные успешно сохранены');
+
+      case 'update':
+        $project = Project::find($request->id);
+        $project->by_us = $request->by_us;
+        $project->title = $request->title;
+        $project->url = $request->url;
+        $file = $request->file('logo');
+        if ($file) {
+          if ($project->logo && file_exists('files/projects/' . $project->logo)) {
+            unlink('files/projects/' . $project->logo);
+          }
+          $fileName = uniqid() . '.' . $file->extension();
+          $file->move(public_path('files/projects'), $fileName);
+          $project->logo = $fileName;
+        }
+
+        $project->update();
+
+        return back()->with('success', 'Данные успешно сохранены');
     }
   }
 }
