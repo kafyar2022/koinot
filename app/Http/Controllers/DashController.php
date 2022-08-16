@@ -335,7 +335,7 @@ class DashController extends Controller
         if ($file) {
           $fileName = uniqid() . '.' . $file->extension();
           $file->move(public_path('files/specialists'), $fileName);
-          Helper::resize_crop_image(260, 330, public_path('files/specialists/' . $fileName), public_path('files/specialists/thumbs/' . $fileName));
+          Helper::resize_crop_image(360, 330, public_path('files/specialists/' . $fileName), public_path('files/specialists/thumbs/' . $fileName));
           $specialist->avatar = $fileName;
         }
         $specialist->about = $request->about;
@@ -356,7 +356,7 @@ class DashController extends Controller
           }
           $fileName = uniqid() . '.' . $file->extension();
           $file->move(public_path('files/specialists'), $fileName);
-          Helper::resize_crop_image(260, 330, public_path('files/specialists/' . $fileName), public_path('files/specialists/thumbs/' . $fileName));
+          Helper::resize_crop_image(360, 330, public_path('files/specialists/' . $fileName), public_path('files/specialists/thumbs/' . $fileName));
           $specialist->avatar = $fileName;
         }
 
