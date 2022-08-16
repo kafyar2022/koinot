@@ -50,6 +50,9 @@ Route::group(['middleware' => ['AuthCheck']], function () {
 
   Route::get('/dashboard/histories/{action?}/{history?}', [DashController::class, 'histories'])->name('dashboard.histories');
   Route::post('/dashboard/histories/{action?}', [DashController::class, 'historiesPost'])->name('histories.post');
+
+  Route::get('/dashboard/news/{action?}/{news?}', [DashController::class, 'news'])->name('dashboard.news');
+  Route::post('/dashboard/news/{action?}', [DashController::class, 'newsPost'])->name('news.post');
 });
 
 

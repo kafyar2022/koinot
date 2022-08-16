@@ -52,3 +52,36 @@
   line-height: 1;
   color: red;
 }
+
+.form-dash__upload-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  text-align: center;
+  color: rgb(153, 153, 153);
+  cursor: pointer;
+  padding: 8px 16px;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: rgb(199, 199, 199);
+  border-image: initial;
+  border-radius: 4px;
+
+  &:hover {
+    color: rgb(255, 86, 53);
+  }
+}
+
+.form-dash__images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8px;
+
+  * {
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+}

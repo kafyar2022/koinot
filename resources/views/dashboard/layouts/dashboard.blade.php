@@ -21,7 +21,7 @@
         <a class="dashboard__link" href="{{ route('dashboard.histories') }}">История компании</a>
       </li>
       <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Новости</a>
+        <a class="dashboard__link" href="{{ route('dashboard.news') }}">Новости</a>
       </li>
       <li class="dashboard__menu-item">
         <a class="dashboard__link" href="#">Проекты</a>
@@ -31,9 +31,6 @@
       </li>
       <li class="dashboard__menu-item">
         <a class="dashboard__link" href="#">Вклад в общество</a>
-      </li>
-      <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Услуги</a>
       </li>
       <li class="dashboard__menu-item">
         <a class="dashboard__link admin-panel__link--logout" href="{{ route('auth.logout', $locale) }}">Выйти</a>
