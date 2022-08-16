@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
       TextsSeeder::class,
       HistoriesSeeder::class,
       NewsSeeder::class,
-      // ProjectsSeeder::class,
-      SpecialistsSeeder::class,
-      PositionSeeder::class,
+      ProjectsSeeder::class,
+      // SpecialistsSeeder::class,
+      // PositionSeeder::class,
       ContributionsSeeder::class,
     ]);
   }

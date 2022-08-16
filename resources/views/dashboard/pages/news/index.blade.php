@@ -6,10 +6,7 @@
     <div class="modal modal--success {{ session()->has('success') ? '' : 'modal--hidden' }}">{{ session()->get('success') }}</div>
     <ul class="page__breadcrumbs">
       <li class="page__breadcrumb">
-        <a href="{{ route('main') }}">Главная</a>
-        <svg width="10" height="16">
-          <use xlink:href="#more-icon"></use>
-        </svg>
+        <a href="{{ route('main') }}">Главная /</a>
       </li>
       <li class="page__breadcrumb page__breadcrumb--current">Новости Kreston</li>
     </ul>

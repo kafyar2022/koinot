@@ -8,6 +8,7 @@ use App\Models\History;
 use App\Models\News;
 use App\Models\NewsImg;
 use App\Models\Project;
+use App\Models\Specialist;
 use App\Models\Text;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
@@ -273,6 +274,93 @@ class DashController extends Controller
         }
 
         $project->update();
+
+        return back()->with('success', 'Данные успешно сохранены');
+    }
+  }
+
+  public function specialists(Request $request)
+  {
+    switch ($request->action) {
+      case 'create':
+        $locale = $request->locale ?? 'ru';
+        $data['locale'] = $locale;
+        $data['specialist'] = null;
+
+        return view('dashboard.pages.specialists.show', compact('data'));
+
+      case 'edit':
+        $specialist = Specialist::find($request->specialist);
+        $data['locale'] = $specialist->locale;
+        $data['specialist'] = $specialist;
+
+        return view('dashboard.pages.specialists.show', compact('data'));
+
+      case 'delete':
+        $specialist = Specialist::find($request->specialist);
+        if ($specialist->avatar) {
+          file_exists('files/specialists/' . $specialist->avatar) ? unlink('files/specialists/' . $specialist->avatar) : '';
+          file_exists('files/specialists/thumbs/' . $specialist->avatar) ? unlink('files/specialists/thumbs/' . $specialist->avatar) : '';
+        }
+        $specialist->delete();
+
+        return back();
+
+      default:
+        $locale = $request->locale ?? 'ru';
+        $data['locale'] = $locale;
+        $data['specialists'] = Specialist::where('locale', $locale)->latest()->get();
+
+        return view('dashboard.pages.specialists.index', compact('data'));
+    }
+  }
+
+  public function specialistsPost(Request $request)
+  {
+    $request->validate([
+      'position' => 'required',
+      'name' => 'required',
+      'surname' => 'required',
+    ]);
+
+    switch ($request->action) {
+      case 'store':
+        $specialist = new Specialist();
+        $specialist->locale = $request->locale;
+        $specialist->position = $request->position;
+        $specialist->name = $request->name;
+        $specialist->surname = $request->surname;
+
+        $file = $request->file('avatar');
+        if ($file) {
+          $fileName = uniqid() . '.' . $file->extension();
+          $file->move(public_path('files/specialists'), $fileName);
+          Helper::resize_crop_image(260, 330, public_path('files/specialists/' . $fileName), public_path('files/specialists/thumbs/' . $fileName));
+          $specialist->avatar = $fileName;
+        }
+        $specialist->about = $request->about;
+        $specialist->save();
+
+        return back()->with('success', 'Данные успешно сохранены');
+
+      case 'update':
+        $specialist = Specialist::find($request->id);
+        $specialist->position = $request->position;
+        $specialist->name = $request->name;
+        $specialist->surname = $request->surname;
+        $file = $request->file('avatar');
+        if ($file) {
+          if ($specialist->avatar && file_exists('files/specialists/' . $specialist->avatar)) {
+            unlink('files/specialists/' . $specialist->avatar);
+            unlink('files/specialists/thumbs/' . $specialist->avatar);
+          }
+          $fileName = uniqid() . '.' . $file->extension();
+          $file->move(public_path('files/specialists'), $fileName);
+          Helper::resize_crop_image(260, 330, public_path('files/specialists/' . $fileName), public_path('files/specialists/thumbs/' . $fileName));
+          $specialist->avatar = $fileName;
+        }
+
+        $specialist->update();
 
         return back()->with('success', 'Данные успешно сохранены');
     }

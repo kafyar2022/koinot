@@ -26,8 +26,8 @@
       <li class="dashboard__menu-item {{ $route == 'dashboard.projects' ? 'dashboard__menu-item--current' : '' }}">
         <a class="dashboard__link" href="{{ route('dashboard.projects') }}">Проекты</a>
       </li>
-      <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Специалисты</a>
+      <li class="dashboard__menu-item {{ $route == 'dashboard.specialists' ? 'dashboard__menu-item--current' : '' }}">
+        <a class="dashboard__link" href="{{ route('dashboard.specialists') }}">Специалисты</a>
       </li>
       <li class="dashboard__menu-item">
         <a class="dashboard__link" href="#">Вклад в общество</a>

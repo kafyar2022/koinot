@@ -16,11 +16,11 @@ class CreateSpecialistsTable extends Migration
     Schema::create('specialists', function (Blueprint $table) {
       $table->id();
       $table->string('locale');
-      $table->integer('position_id');
+      $table->string('position');
       $table->string('name');
       $table->string('surname');
-      $table->string('avatar');
-      $table->text('about');
+      $table->string('avatar')->nullable();
+      $table->text('about')->nullable();
       $table->timestamps();
     });
   }

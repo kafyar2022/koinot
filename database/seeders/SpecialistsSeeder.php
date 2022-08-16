@@ -18,7 +18,7 @@ class SpecialistsSeeder extends Seeder
       foreach (config('app.available_locales') as $locale) {
         Specialist::create([
           'locale' => $locale,
-          'position_id' => $locale == 'ru' ? 1 : 2,
+          'position' => 'Руководитель вымешленого отдела счастья',
           'name' => 'Сухроб',
           'surname' => 'Мирзоев',
           'avatar' => 'avatar-1.jpg',

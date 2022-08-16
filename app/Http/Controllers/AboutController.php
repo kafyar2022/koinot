@@ -22,7 +22,7 @@ class AboutController extends Controller
         break;
 
       case 'management':
-        $data['specialists'] = Specialist::select('id', 'locale', 'position_id', 'name', 'surname', 'avatar', 'about')
+        $data['specialists'] = Specialist::select('id', 'locale', 'position', 'name', 'surname', 'avatar', 'about')
           ->where('locale', $locale)
           ->get();
         break;

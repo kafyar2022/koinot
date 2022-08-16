@@ -9,7 +9,7 @@ const documentClickHandler = (evt) => {
     imgEl.src = `/files/specialists/${specialist.avatar}`;
     imgEl.alt = specialist.title;
     titleEl.textContent = `${specialist.surname} ${specialist.name}`;
-    positionEl.textContent = specialist.position.title;
+    positionEl.textContent = specialist.position;
     contentEl.innerHTML = specialist.about;
 
     document.body.classList.add('page__body--overflow-hidden');
