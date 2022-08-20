@@ -18,7 +18,7 @@ class CreateContributionsTable extends Migration
       $table->string('locale');
       $table->string('title');
       $table->string('slug')->unique();
-      $table->text('content');
+      $table->text('content')->nullable();
       $table->timestamps();
     });
   }

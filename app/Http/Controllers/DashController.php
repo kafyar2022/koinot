@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
 use App\Models\Content;
+use App\Models\Contribution;
+use App\Models\ContributionImage;
 use App\Models\History;
 use App\Models\News;
 use App\Models\NewsImg;
@@ -361,6 +363,95 @@ class DashController extends Controller
         }
 
         $specialist->update();
+
+        return back()->with('success', 'Данные успешно сохранены');
+    }
+  }
+
+  public function contributions(Request $request)
+  {
+    switch ($request->action) {
+      case 'create':
+        $locale = $request->locale ?? 'ru';
+        $data['locale'] = $locale;
+        $data['contribution'] = null;
+
+        return view('dashboard.pages.contributions.show', compact('data'));
+
+      case 'edit':
+        $contribution = Contribution::find($request->contribution);
+        $data['locale'] = $contribution->locale;
+        $data['contribution'] = $contribution;
+        return view('dashboard.pages.contributions.show', compact('data'));
+
+      case 'delete':
+        $contribution = Contribution::find($request->contribution);
+
+        if (count($contribution->images) != 0) {
+          foreach ($contribution->images as $image) {
+            unlink('files/contributions/' . $image->img);
+            unlink('files/contributions/thumbs/' . $image->img);
+            $image->delete();
+          }
+        }
+        $contribution->delete();
+
+        return back();
+
+      default:
+        $locale = $request->locale ?? 'ru';
+        $data['locale'] = $locale;
+        $data['contributions'] = Contribution::where('locale', $locale)->latest()->get();
+
+        return view('dashboard.pages.contributions.index', compact('data'));
+    }
+  }
+
+  public function contributionsPost(Request $request)
+  {
+    $request->validate(['title' => 'required']);
+
+    switch ($request->action) {
+      case 'store':
+        $contribution = new Contribution();
+        $contribution->locale = $request->locale;
+        $contribution->title = $request->title;
+        $contribution->slug = SlugService::createSlug(Contribution::class, 'slug', $contribution->title);
+        $contribution->content = $request->content;
+        $contribution->save();
+
+        if ($request->hasFile('images')) {
+          foreach ($request->file('images') as $file) {
+            $img = new ContributionImage();
+            $img->contribution_id = $contribution->id;
+            $fileName = uniqid() . '.' . $file->extension();
+            $file->move(public_path('files/contributions'), $fileName);
+            Helper::resize_crop_image(360, 310, public_path('files/contributions/' . $fileName), public_path('files/contributions/thumbs/' . $fileName));
+            $img->img = $fileName;
+            $img->save();
+          }
+        }
+
+        return back()->with('success', 'Данные успешно сохранены');
+
+      case 'update':
+        $contribution = Contribution::find($request->id);
+        $contribution->title = $request->title;
+        $contribution->content = $request->content;
+
+        if ($request->hasFile('images')) {
+          foreach ($request->file('images') as $file) {
+            $img = new ContributionImage();
+            $img->contribution_id = $contribution->id;
+            $fileName = uniqid() . '.' . $file->extension();
+            $file->move(public_path('files/contributions'), $fileName);
+            Helper::resize_crop_image(360, 310, public_path('files/contributions/' . $fileName), public_path('files/contributions/thumbs/' . $fileName));
+            $img->img = $fileName;
+            $img->save();
+          }
+        }
+
+        $contribution->update();
 
         return back()->with('success', 'Данные успешно сохранены');
     }

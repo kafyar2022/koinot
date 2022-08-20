@@ -26,8 +26,7 @@ class DatabaseSeeder extends Seeder
       HistoriesSeeder::class,
       NewsSeeder::class,
       ProjectsSeeder::class,
-      // SpecialistsSeeder::class,
-      // PositionSeeder::class,
+      SpecialistsSeeder::class,
       ContributionsSeeder::class,
     ]);
   }

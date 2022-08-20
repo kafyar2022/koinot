@@ -29,8 +29,8 @@
       <li class="dashboard__menu-item {{ $route == 'dashboard.specialists' ? 'dashboard__menu-item--current' : '' }}">
         <a class="dashboard__link" href="{{ route('dashboard.specialists') }}">Специалисты</a>
       </li>
-      <li class="dashboard__menu-item">
-        <a class="dashboard__link" href="#">Вклад в общество</a>
+      <li class="dashboard__menu-item {{ $route == 'dashboard.contributions' ? 'dashboard__menu-item--current' : '' }}">
+        <a class="dashboard__link" href="{{ route('dashboard.contributions') }}">Вклад в общество</a>
       </li>
       <li class="dashboard__menu-item">
         <a class="dashboard__link admin-panel__link--logout" href="{{ route('auth.logout', $locale) }}">Выйти</a>

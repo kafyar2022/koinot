@@ -15,6 +15,7 @@ class ContributionController extends Controller
     $data = Helper::getContents($locale, 'contribution');
 
     $data['contributions'] = Contribution::where('locale', $locale)
+      ->latest()
       ->paginate(9);
 
     return view('pages.contribution.index', compact('data'));
