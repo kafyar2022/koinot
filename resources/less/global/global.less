@@ -30,9 +30,21 @@ a {
 
 .container {
   position: relative;
-  width: @desktop-width - 128px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
+  max-width: @desktop-width - 128px;
+  margin: 0 auto;
+
+  @media (max-width: (@desktop-width - 1px)) {
+    max-width: @tablet-width - 60px;
+  }
+
+  @media (max-width: (@tablet-width - 1px)) {
+    max-width: 460px;
+  }
+
+  @media (max-width: (@mobile-width + 100px)) {
+    max-width: calc(100vw - 32px);
+  }
 }
 
 .title() {

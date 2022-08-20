@@ -10,6 +10,13 @@
   &:not(:last-child) {
     margin-right: 32px;
   }
+
+  @media (max-width: (@desktop-width - 1px)) {
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 4px;
+    }
+  }
 }
 
 .details__icon {

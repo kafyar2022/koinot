@@ -28,6 +28,18 @@
     min-width: 220px;
     .button();
   }
+
+  @media (max-width: (@desktop-width - 1px)) {
+
+    h1,
+    h2 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
 }
 
 .main-page__grid {
@@ -37,6 +49,12 @@
   gap: 32px;
   margin-top: 32px;
   margin-bottom: 32px;
+
+  @media (max-width: (@desktop-width - 1px)) {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    gap: 16px;
+  }
 }
 
 .main-page__grid-item {
@@ -83,6 +101,17 @@
   &:last-child {
     grid-column: span 4;
     grid-row: span 2;
+  }
+
+  @media (max-width: (@desktop-width - 1px)) {
+    padding: 24px;
+
+    &:not(:first-child) {
+      p {
+        margin-right: 2px;
+        display: inline;
+      }
+    }
   }
 }
 

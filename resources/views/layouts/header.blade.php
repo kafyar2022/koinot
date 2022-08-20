@@ -112,6 +112,7 @@
               <a class="page-nav__sublink" @if ($route != 'news') href="{{ route('news') }}" @endif>@lang('Новости')</a>
             </li>
           </ul>
+
           <svg class="page-nav__icon" width="16" height="14">
             <use xlink:href="#triangle"></use>
           </svg>
@@ -128,6 +129,7 @@
               <a class="page-nav__sublink" @if (request('category') != 'with-us') href="{{ route('projects', 'with-us') }}" @endif>@lang('При нашей поддержке')</a>
             </li>
           </ul>
+
           <svg class="page-nav__icon" width="16" height="14">
             <use xlink:href="#triangle"></use>
           </svg>
@@ -144,6 +146,7 @@
               <a class="page-nav__sublink" @if (request('category') != 'startups') href="{{ route('partnership', 'startups') }}" @endif>@lang('Стартаперам и новаторам')</a>
             </li>
           </ul>
+          
           <svg class="page-nav__icon" width="16" height="14">
             <use xlink:href="#triangle"></use>
           </svg>
@@ -151,6 +154,10 @@
 
         <li class="page-nav__item @if ($route == 'contribution' || $route == 'contribution.show') page-nav__item--current @endif">
           <a class="page-nav__link" @if ($route != 'contribution') href="{{ route('contribution') }}" @endif>@lang('Вклад в общество')</a>
+        </li>
+
+        <li class="page-nav__item @if ($route == 'carrier' || $route == 'carrier.test') page-nav__item--current @endif">
+          <a class="page-nav__link" @if ($route != 'contacts') href="{{ route('carrier') }}" @endif>@lang('Карьера')</a>
         </li>
 
         <li class="page-nav__item @if ($route == 'contacts') page-nav__item--current @endif">
