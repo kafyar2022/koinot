@@ -1462,6 +1462,10 @@ a {
   padding: 34px 48px;
   padding-left: 112px;
   color: #fff;
+  transition: 0.3s;
+}
+.contacts-list__item:hover {
+  background-color: rgba(60, 50, 76, 0.8);
 }
 .contacts-list__icon {
   display: flex;
