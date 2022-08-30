@@ -37,22 +37,22 @@
     </section>
 
     <ul class="mission-page__value-list container">
-      <li class="mission-page__value-item" style="background-image: linear-gradient(0deg, rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85)), url('/files/img/value-1.jpg')">
+      <li class="mission-page__value-item" style="background-image: url('/files/img/value-1.jpg')">
         <div class="content" data-content="mission-page-value-1-{{ $locale }}">{!! $data['mission-page-value-1-' . $locale] !!}</div>
       </li>
-      <li class="mission-page__value-item" style="background-image: linear-gradient(0deg, rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85)), url('/files/img/value-2.jpg')">
+      <li class="mission-page__value-item" style="background-image: url('/files/img/value-2.jpg')">
         <div class="content" data-content="mission-page-value-2-{{ $locale }}">{!! $data['mission-page-value-2-' . $locale] !!}</div>
       </li>
-      <li class="mission-page__value-item" style="background-image: linear-gradient(0deg, rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85)), url('/files/img/value-3.jpg')">
+      <li class="mission-page__value-item" style="background-image: url('/files/img/value-3.jpg')">
         <div class="content" data-content="mission-page-value-3-{{ $locale }}">{!! $data['mission-page-value-3-' . $locale] !!}</div>
       </li>
-      <li class="mission-page__value-item" style="background-image: linear-gradient(0deg, rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85)), url('/files/img/value-4.jpg')">
+      <li class="mission-page__value-item" style="background-image: url('/files/img/value-4.jpg')">
         <div class="content" data-content="mission-page-value-4-{{ $locale }}">{!! $data['mission-page-value-4-' . $locale] !!}</div>
       </li>
-      <li class="mission-page__value-item" style="background-image: linear-gradient(0deg, rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85)), url('/files/img/value-5.jpg')">
+      <li class="mission-page__value-item" style="background-image: url('/files/img/value-5.jpg')">
         <div class="content" data-content="mission-page-value-5-{{ $locale }}">{!! $data['mission-page-value-5-' . $locale] !!}</div>
       </li>
-      <li class="mission-page__value-item" style="background-image: linear-gradient(0deg, rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85)), url('/files/img/value-6.jpg')">
+      <li class="mission-page__value-item" style="background-image: url('/files/img/value-6.jpg')">
         <div class="content" data-content="mission-page-value-6-{{ $locale }}">{!! $data['mission-page-value-6-' . $locale] !!}</div>
       </li>
     </ul>

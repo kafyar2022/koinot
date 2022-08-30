@@ -18,7 +18,7 @@
       <x-contacts-list :data="$data" />
 
       <div class="contacts-page__content">
-        <div class="content" data-content="contacts-page-office-{{ $locale }}">{!! $data['contacts-page-office-' . $locale] !!}</div>
+        {{-- <div class="content" data-content="contacts-page-office-{{ $locale }}">{!! $data['contacts-page-office-' . $locale] !!}</div> --}}
       </div>
     </div>
   </main>

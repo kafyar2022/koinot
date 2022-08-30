@@ -55,9 +55,33 @@
 }
 
 .mission-page__value-item {
+  position: relative;
   border-radius: 4px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 54px 48px;
+
+  .content {
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(fade(@secondary, 85%),
+        fade(@secondary, 85%));
+    opacity: 1;
+    transition: 0.3s;
+    border-radius: 4px;
+  }
+
+  &:hover::after {
+    opacity: 0.8;
+  }
 }
