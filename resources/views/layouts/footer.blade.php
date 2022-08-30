@@ -33,7 +33,7 @@
       </div>
 
       <div class="page-footer__menu-list">
-        <dt class="page-footer__menu-caption">@lang('Партнерство')</dt>
+        <dt class="page-footer__menu-caption">@lang('Проекты')</dt>
 
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('projects', ['locale' => $locale, 'category' => 'by-us']) }}">@lang('Реализованные нами')</a>
