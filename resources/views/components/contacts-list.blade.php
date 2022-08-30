@@ -25,7 +25,7 @@
     </span>
   </li>
   <li class="contacts-list__item">
-    <h3 class="contacts-list__title" data-text="contacts-other-term-{{ $locale }}">{{ $data['contacts-other-term-' . $locale] }} вопросы</h3>
+    <h3 class="contacts-list__title" data-text="contacts-other-term-{{ $locale }}">{{ $data['contacts-other-term-' . $locale] }}</h3>
     <a class="contacts-list__phone" href="tel:{{ str_replace([' ', '(', ')', '-'], '', $data['contacts-other-phone-' . $locale]) }}" data-text="contacts-other-phone-{{ $locale }}">{{ $data['contacts-other-phone-' . $locale] }}</a>
     <a class="contacts-list__email" href="mailto:{{ $data['contacts-other-email-' . $locale] }}" data-text="contacts-other-email-{{ $locale }}">{{ $data['contacts-other-email-' . $locale] }}</a>
     <span class="contacts-list__icon">
