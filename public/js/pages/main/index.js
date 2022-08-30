@@ -1,10 +1,14 @@
 import { initHistories } from '../../history-glide.js';
 
-new Glide('.main-page__projects-list', {
-  type: 'carousel',
-  startAt: 0,
-  perView: 6,
-  autoplay: 2000,
-}).mount();
+const projects = document.querySelector('.main-page__projects-list');
+
+if (projects) {
+  new Glide(projects, {
+    type: 'carousel',
+    startAt: 0,
+    perView: 6,
+    autoplay: 2000,
+  }).mount();
+}
 
 initHistories();

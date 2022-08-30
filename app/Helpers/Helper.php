@@ -18,6 +18,7 @@ class Helper
     $contents = Content::where('locale', $locale)
       ->where('page', $pageName)
       ->orWhere('page', null)
+      ->orWhere('page', 'about.history')
       ->get();
 
     foreach ($contents as $content) {

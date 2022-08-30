@@ -44,7 +44,7 @@
       </div>
 
       <div class="page-footer__menu-list">
-        <dt class="page-footer__menu-caption">@lang('Прочее')</dt>
+        <dt class="page-footer__menu-caption">@lang('Другое')</dt>
 
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('contribution', $locale) }}">@lang('Вклад в общество')</a>

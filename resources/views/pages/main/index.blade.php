@@ -32,7 +32,7 @@
       </section>
 
       <section class="main-page__grid-item" style="background-image: url('files/img/main-page-opportunity.jpg')">
-        <div style="max-width: 360px; width: 100%; margin: auto;">
+        <div style="max-width: 360px; width: 100%; margin: auto; z-index: 0">
           <div class="main-page__card-content" data-content="main-page-opportunity-{{ $locale }}">{!! $data['main-page-opportunity-' . $locale] !!}</div>
         </div>
       </section>
@@ -56,19 +56,21 @@
       <div class="container">
         <div class="content" data-content="main-page-projects-{{ $locale }}">{!! $data['main-page-projects-' . $locale] !!}</div>
 
-        <div class="main-page__projects-list glide">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              @foreach ($data['projects'] as $project)
-                <li class="glide__slide">
-                  <a class="main-page__projects-item" @if ($project->url) href="{{ $project->url }}" target="_blank" @endif>
-                    <img class="main-page__projects-img" src="{{ asset('files/projects/' . $project->logo) }}" width="165" height="112" alt="{{ $project->title }}">
-                  </a>
-                </li>
-              @endforeach
-            </ul>
+        @if (count($data['projects']) != 0)
+          <div class="main-page__projects-list glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                @foreach ($data['projects'] as $project)
+                  <li class="glide__slide">
+                    <a class="main-page__projects-item" @if ($project->url) href="{{ $project->url }}" target="_blank" @endif>
+                      <img class="main-page__projects-img" src="{{ asset('files/projects/' . $project->logo) }}" width="165" height="112" alt="{{ $project->title }}">
+                    </a>
+                  </li>
+                @endforeach
+              </ul>
+            </div>
           </div>
-        </div>
+        @endif
         <a class="main-page__more-link" href="{{ route('projects') }}">@lang('Все наши проекты')</a>
       </div>
     </section>

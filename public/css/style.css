@@ -1816,6 +1816,9 @@ a {
   margin-right: 8px;
   margin-bottom: 8px;
 }
+.main-page__board {
+  z-index: 2;
+}
 .main-page__board-content {
   min-height: 22px;
 }
@@ -1928,6 +1931,11 @@ a {
   height: 100%;
   border-radius: 4px;
   background: linear-gradient(rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85));
+  opacity: 1;
+  transition: 0.3s;
+}
+.main-page__grid-item:hover::after {
+  opacity: 0.8;
 }
 .main-page__grid-item:first-child,
 .main-page__grid-item:nth-child(2) {
