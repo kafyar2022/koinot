@@ -49,7 +49,7 @@
           <p class="form__element">
             <label class="form__label">
               <span class="visually-hidden">@lang('Опишиет свой запрос')</span>
-              <textarea class="form__field form__field--text" name="message" cols="30" rows="10" placeholder="@lang('Опишиет свой запрос')" autocomplete="off" required></textarea>
+              <textarea class="form__field form__field--text" name="message" cols="30" rows="10" placeholder="@lang('Введите текст обращения')" autocomplete="off" required></textarea>
             </label>
           </p>
 
