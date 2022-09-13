@@ -176,7 +176,7 @@ class DashController extends Controller
             $img->news_id = $news->id;
             $fileName = uniqid() . '.' . $file->extension();
             $file->move(public_path('files/news'), $fileName);
-            Helper::resize_crop_image(360, 180, public_path('files/news/' . $fileName), public_path('files/news/thumbs/' . $fileName));
+            Helper::resize_crop_image(360, 150, public_path('files/news/' . $fileName), public_path('files/news/thumbs/' . $fileName));
             $img->img = $fileName;
             $img->save();
           }
@@ -195,7 +195,7 @@ class DashController extends Controller
             $img->news_id = $news->id;
             $fileName = uniqid() . '.' . $file->extension();
             $file->move(public_path('files/news'), $fileName);
-            Helper::resize_crop_image(360, 180, public_path('files/news/' . $fileName), public_path('files/news/thumbs/' . $fileName));
+            Helper::resize_crop_image(360, 150, public_path('files/news/' . $fileName), public_path('files/news/thumbs/' . $fileName));
             $img->img = $fileName;
             $img->save();
           }
