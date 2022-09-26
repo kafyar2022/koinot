@@ -168,11 +168,9 @@ class DashController extends Controller
         $news->title = $request->title;
         $news->slug = SlugService::createSlug(News::class, 'slug', $news->title);
         $news->content = $request->content;
-        $news->save();
-
-        $news->date = $news->created_at;
         $request->date && $news->date = $request->date;
         $news->save();
+
 
 
         if ($request->hasFile('images')) {
