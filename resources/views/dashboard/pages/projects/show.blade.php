@@ -39,7 +39,7 @@
         <img style="grid-row: span 2; justify-self: center; object-fit: cover;" src="{{ asset('files/projects/' . $data['project']->logo) }}" width="165" height="112" alt="{{ $data['project']->title }}">
       @else
         <input type="hidden" name="locale" value="{{ $data['locale'] }}">
-        <img style="grid-row: span 2; justify-self: center; object-fit: cover;" width="165" height="112">
+        <img style="grid-row: span 2; justify-self: center; object-fit: cover; object-fit: contain" width="165" height="112">
       @endif
 
       <label class="form-dash__element" style="grid-column-start: 1;">
