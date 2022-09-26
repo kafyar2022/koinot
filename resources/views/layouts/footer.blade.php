@@ -8,7 +8,7 @@
           <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'history']) }}">@lang('История')</a>
         </dd>
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'mission']) }}">@lang('Миссия, видение, ценности')</a>
+          <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'mission']) }}">@lang('Миссия, Видение, Ценности')</a>
         </dd>
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'management']) }}">@lang('Менеджмент')</a>
@@ -86,7 +86,7 @@
       </a>
     </div>
 
-    <ul class="social-list">
+    {{-- <ul class="social-list">
       <li class="social-list__item">
         <a class="social-list__link" href="#">
           <span class="visually-hidden">Фейсбук</span>
@@ -117,8 +117,8 @@
           </span>
         </a>
       </li>
-    </ul>
+    </ul> --}}
 
-    <p class="page-footer__copyright">&#169; {{ date('Y') }} @lang('Коиноти нав') <br> @lang('Все права защищены')</p>
+    <p class="page-footer__copyright">&#169; {{ date('Y') }} ЗАО &#8220;@lang('Коиноти нав')&#8221; <br> @lang('Все права защищены')</p>
   </div>
 </footer>

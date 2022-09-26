@@ -1,6 +1,7 @@
 const formEl = document.querySelector('.form-dash');
 const imagesChooserEl = formEl.querySelector('.form-dash__upload-images');
 const submitEl = document.querySelector('[data-action="submit"]');
+const imageEls = formEl.querySelectorAll('[data-img]');
 
 const simditor = new Simditor({
   textarea: formEl.querySelector('textarea[name="content"]'),
@@ -49,3 +50,16 @@ submitEl.addEventListener('click', () => {
     formEl.submit();
   }
 });
+
+if (imageEls) {
+  imageEls.forEach((imgEl) => {
+    imgEl.addEventListener('click', (evt) => {
+      fetch(`/news-img/delete/${evt.target.dataset.img}`)
+        .then((response) => {
+          if (response.ok) {
+            evt.target.remove();
+          }
+        });
+    });
+  });
+}

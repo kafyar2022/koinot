@@ -456,4 +456,12 @@ class DashController extends Controller
         return back()->with('success', 'Данные успешно сохранены');
     }
   }
+
+  public function deleteNewsImg($id)
+  {
+    $img = NewsImg::find($id);
+    $img->delete();
+
+    return 'success';
+  }
 }

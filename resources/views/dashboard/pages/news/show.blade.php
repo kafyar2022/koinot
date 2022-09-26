@@ -59,7 +59,9 @@
         <div class="form-dash__images">
           @if ($data['news'])
             @foreach ($data['news']->images as $image)
-              <img src={{ asset('files/news/thumbs/' . $image->img) }} width="70" height="70">
+              <div data-img="{{ $image->id }}">
+                <img src={{ asset('files/news/thumbs/' . $image->img) }} width="70" height="70">
+              </div>
             @endforeach
           @endif
         </div>

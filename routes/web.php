@@ -47,6 +47,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::get('/dashboard/toggle-state', [DashController::class, 'toggleState']);
   Route::post('/contents/update', [DashController::class, 'updateContent']);
   Route::post('/texts/update', [DashController::class, 'updateText']);
+  Route::get('/news-img/delete/{id}', [DashController::class, 'deleteNewsImg']);
 
   Route::get('/dashboard/histories/{action?}/{history?}', [DashController::class, 'histories'])->name('dashboard.histories');
   Route::post('/dashboard/histories/{action?}', [DashController::class, 'historiesPost'])->name('histories.post');

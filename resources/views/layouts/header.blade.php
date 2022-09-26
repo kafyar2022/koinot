@@ -27,7 +27,7 @@
       </a>
     </div>
 
-    <ul class="page-header__social-list social-list">
+    {{-- <ul class="page-header__social-list social-list">
       <li class="social-list__item">
         <a class="social-list__link" href="#">
           <span class="visually-hidden">Фейсбук</span>
@@ -85,7 +85,7 @@
           @endif
         @endforeach
       </ul>
-    </div>
+    </div> --}}
   </div>
 
   <nav class="page-nav">
@@ -103,7 +103,7 @@
               <a class="page-nav__sublink" @if (request('category') != 'history') href="{{ route('about', 'history') }}" @endif>@lang('История')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'mission') page-nav__subitem--current @endif">
-              <a class="page-nav__sublink" @if (request('category') != 'mission') href="{{ route('about', 'mission') }}" @endif>@lang('Миссия, видение, ценности')</a>
+              <a class="page-nav__sublink" @if (request('category') != 'mission') href="{{ route('about', 'mission') }}" @endif>@lang('Миссия, Видение, Ценности')</a>
             </li>
             <li class="page-nav__subitem @if (request('category') == 'management') page-nav__subitem--current @endif">
               <a class="page-nav__sublink" @if (request('category') != 'management') href="{{ route('about', 'management') }}" @endif>@lang('Менеджмент')</a>
@@ -136,7 +136,8 @@
         </li>
 
         <li class="page-nav__item @if ($route == 'partnership') page-nav__item--current @endif">
-          <button class="page-nav__button">@lang('Партнерство')</button>
+          <a class="page-nav__link" @if (request('category') != 'startups') href="{{ route('partnership', 'investors') }}" @endif>@lang('Партнерство')</a>
+          {{-- <button class="page-nav__button">@lang('Партнерство')</button>
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
             <li class="page-nav__subitem @if (request('category') == 'investors') page-nav__subitem--current @endif">
@@ -146,10 +147,10 @@
               <a class="page-nav__sublink" @if (request('category') != 'startups') href="{{ route('partnership', 'startups') }}" @endif>@lang('Стартаперам и новаторам')</a>
             </li>
           </ul>
-          
+
           <svg class="page-nav__icon" width="16" height="14">
             <use xlink:href="#triangle"></use>
-          </svg>
+          </svg> --}}
         </li>
 
         <li class="page-nav__item @if ($route == 'contribution' || $route == 'contribution.show') page-nav__item--current @endif">

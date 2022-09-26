@@ -6,7 +6,9 @@
 
 @section('content')
   <main class="news-show-page">
-    <img class="board" src="{{ asset('/files/news/' . $data['news']->images[0]->img) }}" width="1280" height="540" alt="{{ $data['news']->images[0]->description }}">
+    @if (count($data['news']->images) != 0)
+      <img class="board" src="{{ asset('/files/news/' . $data['news']->images[0]->img) }}" width="1280" height="540" alt="{{ $data['news']->images[0]->description }}">
+    @endif
 
     <div class="news-show-page__container container">
       <time class="news-show-page__date" datetime="{{ $data['news']->created_at }}">{{ date_format($data['news']->created_at, 'Y.m.d') }}</time>
