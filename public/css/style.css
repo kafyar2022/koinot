@@ -1440,9 +1440,12 @@ a {
   margin-top: 0;
   margin-bottom: 0;
   margin-bottom: 8px;
+  text-align: center;
 }
 .project-card__logo {
   margin-bottom: 16px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .project-card__link:hover {
   text-decoration: underline;
