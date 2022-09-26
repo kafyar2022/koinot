@@ -50,7 +50,12 @@
         <textarea class="form-dash__field" name="content">{{ $data['news']->content ?? '' }}</textarea>
       </label>
 
-      <div class="form-dash__element" style="grid-column: 4/5; grid-row: 1/5;">
+      <label class="form-dash__element" style="grid-column: 4/5; grid-row: 1/2">
+        <span class="form-dash__label">Дата</span>
+        <input class="form-dash__field" name="date" type="text" value="{{ $data['news']->date ?? '' }}">
+      </label>
+
+      <div class="form-dash__element" style="grid-column: 4/5; grid-row: 2/6;">
         <span class="form-dash__label">Картинки</span>
         <label class="form-dash__upload-images">
           Загрузить фотки

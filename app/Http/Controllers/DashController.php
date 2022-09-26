@@ -170,6 +170,11 @@ class DashController extends Controller
         $news->content = $request->content;
         $news->save();
 
+        $news->date = $news->created_at;
+        $request->date && $news->date = $request->date;
+        $news->save();
+
+
         if ($request->hasFile('images')) {
           foreach ($request->file('images') as $file) {
             $img = new NewsImg();
@@ -200,6 +205,8 @@ class DashController extends Controller
             $img->save();
           }
         }
+
+        $news->date = $request->date;
 
         $news->update();
 
