@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
       ContentSeeder::class,
       TextsSeeder::class,
       HistoriesSeeder::class,
+      BannersSeeder::class,
       // NewsSeeder::class,
       // ProjectsSeeder::class,
       // SpecialistsSeeder::class,

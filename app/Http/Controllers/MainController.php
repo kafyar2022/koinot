@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Banner;
 use App\Models\History;
 use App\Models\News;
 use App\Models\Project;
@@ -26,6 +27,8 @@ class MainController extends Controller
 
     $data['projects'] = Project::where('locale', $locale)
       ->get();
+
+    $data['banners'] = Banner::where('page', 'main')->get();
 
     return view('pages.main.index', compact('data'));
   }

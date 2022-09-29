@@ -1855,6 +1855,80 @@ a {
   align-items: center;
   font-size: 14px;
 }
+.banner {
+  position: relative;
+  width: 100vw;
+  z-index: 2;
+}
+.banner .glide__bullets {
+  position: absolute;
+  bottom: 16px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  left: 0;
+  z-index: 3;
+}
+.banner .glide__bullet {
+  display: block;
+  border: none;
+  background-color: #E6E6E6;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.banner .glide__bullet:not(:last-child) {
+  margin-right: 10px;
+}
+.banner .glide__bullet--active {
+  background-color: #ed2e38;
+}
+.banner .glide__arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+.banner .glide__arrows button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  color: #ed2e38;
+  pointer-events: all;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.banner .glide__arrows button:first-child {
+  left: 32px;
+  transform: translateY(-50%) rotate(180deg);
+}
+.banner .glide__arrows button:last-child {
+  right: 32px;
+}
+.banner__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.banner__content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: #fff;
+}
+.banner__container {
+  padding: 24px 64px;
+}
 .main-page__board {
   z-index: 2;
 }
@@ -1864,7 +1938,7 @@ a {
 .main-page__board-content h1,
 .main-page__board-content h2 {
   font-weight: 700;
-  font-size: 50px;
+  font-size: 42px;
   margin-top: 0;
   margin-bottom: 0;
 }

@@ -1,0 +1,84 @@
+.banner {
+  position: relative;
+  width: 100vw;
+  z-index: 2;
+
+  .glide__bullets {
+    position: absolute;
+    bottom: 16px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    left: 0;
+    z-index: 3;
+  }
+
+  .glide__bullet {
+    display: block;
+    border: none;
+    background-color: #E6E6E6;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &--active {
+      background-color: @primary;
+    }
+  }
+
+  .glide__arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 3;
+    pointer-events: none;
+
+    button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      color: @primary;
+      pointer-events: all;
+      transform: translateY(-50%);
+      cursor: pointer;
+
+      &:first-child {
+        left: 32px;
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      &:last-child {
+        right: 32px;
+      }
+    }
+  }
+}
+
+.banner__img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.banner__content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: @basic-white;
+}
+
+.banner__container {
+  padding: 24px 64px;
+}
