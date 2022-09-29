@@ -14,7 +14,7 @@
               <li class="glide__slide">
                 <img
                   class="banner__img"
-                  src="{{ asset('files/banners/' . $banner->img) }}"
+                  src="{{ asset('img/banners/' . $banner->img) }}"
                   alt="Баннер"
                   width="1920"
                   height="540">

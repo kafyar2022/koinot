@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
       TextsSeeder::class,
       HistoriesSeeder::class,
       BannersSeeder::class,
-      // NewsSeeder::class,
+      NewsSeeder::class,
       // ProjectsSeeder::class,
       // SpecialistsSeeder::class,
-      // ContributionsSeeder::class,
+      ContributionsSeeder::class,
     ]);
   }
 }
