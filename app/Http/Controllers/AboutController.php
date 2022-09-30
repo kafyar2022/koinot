@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Banner;
 use App\Models\History;
 use App\Models\Specialist;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class AboutController extends Controller
     $locale = app()->getLocale();
 
     $data = Helper::getContents($locale, 'about.' . $category);
+    $data['banners'] = Banner::where('page', 'about.' . $category)->get();
 
     switch ($category) {
       case 'history':

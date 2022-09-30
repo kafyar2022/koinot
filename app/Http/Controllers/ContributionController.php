@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Banner;
 use App\Models\Contribution;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,8 @@ class ContributionController extends Controller
     $data['contributions'] = Contribution::where('locale', $locale)
       ->orderBy('date', 'desc')
       ->paginate(9);
+
+    $data['banners'] = Banner::where('page', 'contributions')->get();
 
     return view('pages.contribution.index', compact('data'));
   }

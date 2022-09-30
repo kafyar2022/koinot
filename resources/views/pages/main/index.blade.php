@@ -44,9 +44,7 @@
 
         <div class="banner__content">
           <div class="banner__container container">
-            <div style="width: 50%">
-              <div class="main-page__board-content" data-content="main-page-board-{{ $locale }}">{!! $data['main-page-board-' . $locale] !!}</div>
-            </div>
+            <div class="main-page__board-content" data-content="main-page-board-{{ $locale }}">{!! $data['main-page-board-' . $locale] !!}</div>
           </div>
           <svg class="board__mask" width="1250" height="540">
             <use xlink:href="#board-mask"></use>

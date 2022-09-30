@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Banner;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,6 @@ class ProjectsController extends Controller
   public function index(Request $request)
   {
     $locale = app()->getLocale();
-
 
     switch ($request->category) {
       case 'by-us':
@@ -34,6 +34,7 @@ class ProjectsController extends Controller
           ->paginate(9);
         break;
     }
+    $data['banners'] = Banner::where('page', 'projects')->get();
 
     return view('pages.projects.index', compact('data'));
   }

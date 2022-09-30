@@ -11,16 +11,4 @@ if (projects) {
   }).mount();
 }
 
-const banner = document.querySelector('.banner');
-
-if (banner) {
-  new Glide(banner, {
-    type: 'carousel',
-    startAt: 0,
-    perView: 1,
-    gap: 0,
-    autoplay: 3000,
-  }).mount();
-}
-
 initHistories();

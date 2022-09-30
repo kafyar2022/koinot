@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Banner;
 use App\Models\News;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -18,6 +17,8 @@ class NewsController extends Controller
     $data['news'] = News::where('locale', $locale)
       ->orderBy('date', 'desc')
       ->paginate(9);
+
+    $data['banners'] = Banner::where('page', 'news')->get();
 
     return view('pages.news.index', compact('data'));
   }
