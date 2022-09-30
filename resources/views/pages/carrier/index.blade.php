@@ -7,7 +7,7 @@
 @section('content')
   <main class="carrier-page">
     @if (count($data['banners']) != 0)
-      <div class="glide banner">
+      <div class="glide banner carrier-page__banner">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
             @foreach ($data['banners'] as $banner)

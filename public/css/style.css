@@ -2991,6 +2991,9 @@ a {
 .contacts-page__content:not(:last-of-type) {
   margin-bottom: 64px;
 }
+.carrier-page__banner {
+  margin-bottom: 64px;
+}
 .carrier-page__board {
   margin-bottom: 32px;
 }
