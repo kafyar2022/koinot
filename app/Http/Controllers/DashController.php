@@ -531,9 +531,11 @@ class DashController extends Controller
 
       case 'delete':
         $banner = Banner::find($request->page);
-        $banner->img && file_exists('img/banners/' . $banner->img)
+        if ($banner->img != 'img.jpg') {
+          $banner->img && file_exists('img/banners/' . $banner->img)
           ? unlink('img/banners/' . $banner->img)
           : '';
+        }
         $banner->delete();
 
         return 'success';
