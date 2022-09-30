@@ -7,7 +7,9 @@
 @section('content')
   <main class="news-show-page">
     @if (count($data['news']->images) != 0)
-      <img class="board" src="{{ asset('/files/news/' . $data['news']->images[0]->img) }}" width="1280" height="540" alt="{{ $data['news']->images[0]->description }}">
+      <div class="container">
+        <img class="news-show-page__board board" src="{{ asset('/files/news/' . $data['news']->images[0]->img) }}" width="1280" height="540" alt="{{ $data['news']->images[0]->description }}">
+      </div>
     @endif
 
     <div class="news-show-page__container container">
