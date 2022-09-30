@@ -2379,7 +2379,8 @@ a {
   background-repeat: no-repeat;
   padding: 54px 48px;
 }
-.mission-page__value-item .content {
+.mission-page__value-item .content,
+.mission-page__value-item .simditor {
   z-index: 1;
 }
 .mission-page__value-item::after {
