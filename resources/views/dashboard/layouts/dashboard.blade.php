@@ -17,6 +17,9 @@
     </a>
 
     <ul class="dashboard__menu">
+      <li class="dashboard__menu-item @if ($route == 'banners') dashboard__menu-item--current @endif">
+        <a class="dashboard__link" href="{{ route('banners') }}">Баннеры</a>
+      </li>
       <li class="dashboard__menu-item {{ $route == 'dashboard.histories' ? 'dashboard__menu-item--current' : '' }}">
         <a class="dashboard__link" href="{{ route('dashboard.histories') }}">История компании</a>
       </li>

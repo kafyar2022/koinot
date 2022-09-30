@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Banner;
 use App\Models\Content;
 use App\Models\Contribution;
 use App\Models\ContributionImage;
@@ -174,8 +175,6 @@ class DashController extends Controller
         $news->content = $request->content;
         $request->date ? $news->date = $request->date : $news->date = new DateTime();
         $news->save();
-
-
 
         if ($request->hasFile('images')) {
           foreach ($request->file('images') as $file) {
@@ -519,5 +518,53 @@ class DashController extends Controller
     $img->delete();
 
     return 'success';
+  }
+
+  public function banners(Request $request)
+  {
+    switch ($request->action) {
+      case 'show':
+        $data['banners'] = Banner::where('page', $request->page)->get();
+        $data['page'] = $request->page;
+
+        return view('dashboard.pages.banners.show', compact('data'));
+
+      case 'delete':
+        $banner = Banner::find($request->page);
+        $banner->img && file_exists('img/banners/' . $banner->img)
+          ? unlink('img/banners/' . $banner->img)
+          : '';
+        $banner->delete();
+
+        return 'success';
+
+      default:
+        return view('dashboard.pages.banners.index');
+    }
+  }
+
+  public function bannersPost(Request $request)
+  {
+    switch ($request->action) {
+      case 'store':
+        if ($request->hasFile('images')) {
+          foreach ($request->file('images') as $file) {
+            $banner = new Banner();
+            $banner->page = $request->page;
+            $fileName = uniqid() . '.' . $file->extension();
+            $file->move(public_path('img/banners'), $fileName);
+            Helper::resize_crop_image(
+              1920,
+              540,
+              public_path('img/banners/' . $fileName),
+              public_path('img/banners/' . $fileName)
+            );
+            $banner->img = $fileName;
+            $banner->save();
+          }
+        }
+
+        return back()->with('success', 'Данные успешно сохранены');
+    }
   }
 }
