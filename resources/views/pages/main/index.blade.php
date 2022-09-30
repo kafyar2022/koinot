@@ -68,9 +68,28 @@
         <div class="content" data-content="main-page-contribution-{{ $locale }}">{!! $data['main-page-contribution-' . $locale] !!}</div>
       </section>
 
-      <section class="main-page__grid-item" style="background-image: url('files/img/main-page-opportunity.jpg')">
+      <section class="main-page__grid-item">
+        <video
+          class="video-card"
+          style="border-radius: 8px"
+          width="320"
+          height="240"
+          autoplay
+          loop
+          muted>
+          <source src="{{ asset('video/trimmed/opportunity.mp4') }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
         <div style="max-width: 360px; width: 100%; margin: auto; z-index: 0">
           <div class="main-page__card-content" data-content="main-page-opportunity-{{ $locale }}">{!! $data['main-page-opportunity-' . $locale] !!}</div>
+          <button
+            class="watch-video"
+            style="margin-left: auto"
+            data-src="{{ asset('video/opportunity.mp4') }}"
+            onclick="window.playVideo(this)"
+            type="button">
+            @lang('Смотреть <br> видео')
+          </button>
         </div>
       </section>
     </div>
