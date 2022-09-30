@@ -28,12 +28,12 @@
       <input type="hidden" name="page" value="{{ $data['page'] }}">
 
       <div class="form-dash__element" style="grid-column: span 4;">
+        <p>Баннеры (<span style="color: red">1920x540</span>)</p>
+
         <label class="form-dash__upload-images">
           Загрузить баннеры
           <input class="visually-hidden" name="images[]" type="file" accept=".png, .jpeg, .jpg" multiple>
         </label>
-
-        <p>Баннеры <span style="color: red">1920x540</span></p>
 
         <div class="form-dash__images">
           @if (count($data['banners']) > 0)
