@@ -55,6 +55,7 @@ window.playVideo = (button) => {
     evt.target.remove();
 
     document.fullscreenElement && document.exitFullscreen();
+    document.body.removeAttribute('style')
   });
 
   videoEl.addEventListener('mousemove', () => {

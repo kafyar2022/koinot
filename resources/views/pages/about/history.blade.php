@@ -6,9 +6,27 @@
 
 @section('content')
   <main class="history-page">
-    <div class="history-page__board board" style="background-image: linear-gradient(rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0.7)), url('/files/img/history-page-board.jpg')">
+    <div class="history-page__board board">
+      <video
+        class="video-card"
+        width="320"
+        height="240"
+        autoplay
+        loop
+        muted>
+        <source src="{{ asset('video/trimmed/about.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="board__container container">
         <div class="history-page__board-content" data-content="history-page-board-{{ $locale }}">{!! $data['history-page-board-' . $locale] !!}</div>
+        <button
+          class="watch-video"
+          style="margin-left: 240px"
+          data-src="{{ asset('video/about.mp4') }}"
+          onclick="window.playVideo(this)"
+          type="button">
+          @lang('Смотреть <br> видео')
+        </button>
       </div>
     </div>
 
