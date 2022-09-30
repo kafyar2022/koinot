@@ -28,7 +28,7 @@
           <a class="page__link" href="/{{ request()->path() }}?locale=ru">Добавить русский вариант</a>
         @endif
       @endif
-      <a class="page__link" data-action="submit">{{ $data['news'] ? 'Редактировать' : 'Сохранить' }}</a>
+      <a class="page__link" data-action="submit">Сохранить</a>
     </div>
 
     <form class="form-dash" action="{{ $data['news'] ? route('news.post', ['action' => 'update']) : route('news.post', ['action' => 'store']) }}" method="post" enctype="multipart/form-data">
@@ -52,7 +52,11 @@
 
       <label class="form-dash__element" style="grid-column: 4/5; grid-row: 1/2">
         <span class="form-dash__label">Дата</span>
-        <input class="form-dash__field" name="date" type="text" value="{{ $data['news']->date ?? '' }}">
+        <input
+          class="form-dash__field"
+          name="date"
+          type="datetime-local"
+          value="{{ $data['news']->date ?? '' }}">
       </label>
 
       <div class="form-dash__element" style="grid-column: 4/5; grid-row: 2/6;">

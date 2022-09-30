@@ -7,7 +7,7 @@
 @section('content')
   <main class="contribution-show-page">
     <div class="container">
-      <time class="contribution-show-page__date" datetime="{{ $data['contribution']->created_at }}">{{ date_format($data['contribution']->created_at, 'Y.m.d') }}</time>
+      <time class="contribution-show-page__date" datetime="{{ $data['contribution']->created_at }}">{{ date_format($data['contribution']->created_at, 'd.m.Y') }}</time>
       <h1 class="contribution-show-page__title">{{ $data['contribution']->title }}</h1>
       <div class="content">{!! $data['contribution']->content !!}</div>
 

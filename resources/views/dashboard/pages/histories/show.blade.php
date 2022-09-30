@@ -27,7 +27,7 @@
           <a class="page__link" href="/{{ request()->path() }}?locale=ru">Добавить русский вариант</a>
         @endif
       @endif
-      <a class="page__link" data-action="submit">{{ $data['history'] ? 'Редактировать' : 'Сохранить' }}</a>
+      <a class="page__link" data-action="submit">Сохранить</a>
     </div>
 
     <form class="form-dash" @if ($data['history']) action="{{ route('histories.post', ['action' => 'update']) }}" @else action="{{ route('histories.post', ['action' => 'store']) }}" @endif method="post">

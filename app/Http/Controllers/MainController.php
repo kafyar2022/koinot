@@ -8,6 +8,7 @@ use App\Models\History;
 use App\Models\News;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -21,7 +22,7 @@ class MainController extends Controller
       ->get();
 
     $data['news'] = News::where('locale', $locale)
-      ->orderBy('id', 'asc')
+      ->orderBy('date', 'desc')
       ->take(3)
       ->get();
 

@@ -11,7 +11,11 @@
     @endif
 
     <div class="news-show-page__container container">
-      <time class="news-show-page__date">{{ $data['news']->date }}</time>
+      <time
+        class="news-show-page__date"
+        datetime="{{ $data['news']->date }}">
+        {{ Carbon\Carbon::create($data['news']->date)->isoFormat('DD.MM.YYYY') }}
+      </time>
       <h1 class="news-show-page__title">{{ $data['news']->title }}</h1>
 
       <div class="news-show-page__content content">{!! $data['news']->content !!}</div>

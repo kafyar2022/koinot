@@ -28,7 +28,7 @@
           <a class="page__link" href="/{{ request()->path() }}?locale=ru">Добавить русский вариант</a>
         @endif
       @endif
-      <a class="page__link" data-action="submit">{{ $data['specialist'] ? 'Редактировать' : 'Сохранить' }}</a>
+      <a class="page__link" data-action="submit">Сохранить</a>
     </div>
 
     <form class="form-dash" action="{{ $data['specialist'] ? route('specialists.post', ['action' => 'update']) : route('specialists.post', ['action' => 'store']) }}" method="post" enctype="multipart/form-data">

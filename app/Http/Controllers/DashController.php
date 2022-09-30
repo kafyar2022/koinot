@@ -13,7 +13,9 @@ use App\Models\Project;
 use App\Models\Specialist;
 use App\Models\Text;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashController extends Controller
 {
@@ -151,7 +153,9 @@ class DashController extends Controller
       default:
         $locale = $request->locale ?? 'ru';
         $data['locale'] = $locale;
-        $data['news'] = News::where('locale', $locale)->latest()->get();
+        $data['news'] = News::where('locale', $locale)
+          ->orderBy('date', 'desc')
+          ->get();
 
         return view('dashboard.pages.news.index', compact('data'));
     }
@@ -168,7 +172,7 @@ class DashController extends Controller
         $news->title = $request->title;
         $news->slug = SlugService::createSlug(News::class, 'slug', $news->title);
         $news->content = $request->content;
-        $request->date && $news->date = $request->date;
+        $request->date ? $news->date = $request->date : $news->date = new DateTime();
         $news->save();
 
 
@@ -205,7 +209,6 @@ class DashController extends Controller
         }
 
         $news->date = $request->date;
-
         $news->update();
 
         return back()->with('success', 'Новость успешно сохранена');

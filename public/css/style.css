@@ -1441,6 +1441,7 @@ a {
   margin-bottom: 0;
   margin-bottom: 8px;
   text-align: center;
+  display: none;
 }
 .project-card__logo {
   margin-bottom: 16px;
@@ -1897,7 +1898,7 @@ a {
   padding: 0;
   position: absolute;
   top: 0;
-  color: #ed2e38;
+  color: #fff;
   pointer-events: all;
   transform: translateY(-50%);
   cursor: pointer;
