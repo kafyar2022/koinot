@@ -1047,7 +1047,7 @@ a {
   }
 }
 .board__container {
-  padding: 80px 112px;
+  padding: 32px 64px;
 }
 @media (max-width: 1279px) {
   .board__container {
