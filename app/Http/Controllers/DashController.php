@@ -409,7 +409,9 @@ class DashController extends Controller
       default:
         $locale = $request->locale ?? 'ru';
         $data['locale'] = $locale;
-        $data['contributions'] = Contribution::where('locale', $locale)->latest()->get();
+        $data['contributions'] = Contribution::where('locale', $locale)
+          ->orderBy('date', 'desc')
+          ->get();
 
         return view('dashboard.pages.contributions.index', compact('data'));
     }
@@ -426,6 +428,7 @@ class DashController extends Controller
         $contribution->title = $request->title;
         $contribution->slug = SlugService::createSlug(Contribution::class, 'slug', $contribution->title);
         $contribution->content = $request->content;
+        $request->date ? $contribution->date = $request->date : $contribution->date = new DateTime();
         $contribution->save();
 
         if ($request->hasFile('images')) {
@@ -446,6 +449,7 @@ class DashController extends Controller
         $contribution = Contribution::find($request->id);
         $contribution->title = $request->title;
         $contribution->content = $request->content;
+        $contribution->date = $request->date;
 
         if ($request->hasFile('images')) {
           foreach ($request->file('images') as $file) {

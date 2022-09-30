@@ -15,7 +15,7 @@ class ContributionController extends Controller
     $data = Helper::getContents($locale, 'contribution');
 
     $data['contributions'] = Contribution::where('locale', $locale)
-      ->latest()
+      ->orderBy('date', 'desc')
       ->paginate(9);
 
     return view('pages.contribution.index', compact('data'));
@@ -31,7 +31,7 @@ class ContributionController extends Controller
       ->first();
 
     $data['last-contributions'] = Contribution::where('locale', $locale)
-      ->latest()
+      ->orderBy('date', 'desc')
       ->take(3)
       ->get();
 
