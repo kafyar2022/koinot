@@ -20,6 +20,7 @@ const createQuizHeadTemplate = (stages, currentStage, currentQuestion) => {
           <svg
             width="18"
             height="18"
+            viewBox="0 0 24 24"
             fill="none"
             stroke="#29c529"
             stroke-width="3"
