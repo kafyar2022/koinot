@@ -2025,6 +2025,110 @@ a {
   -o-object-fit: contain;
      object-fit: contain;
 }
+.quiz {
+  display: grid;
+  gap: 16px;
+}
+.quiz__head {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-auto-rows: 40px;
+  gap: 8px;
+}
+.quiz__head-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #8775A4;
+}
+.quiz__head-item--current {
+  background-color: #fff;
+  color: #ED2E38;
+}
+.quiz__head-item--disabled {
+  background-color: #706581;
+  opacity: 0.8;
+}
+.quiz__head-item svg {
+  margin-left: 8px;
+}
+.quiz__body {
+  border-radius: 4px;
+  min-height: 256px;
+  background-color: #fff;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  padding: 56px;
+  flex-direction: column;
+}
+.quiz__question {
+  margin-bottom: 32px;
+}
+.quiz__answers {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 32px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.quiz__next-question {
+  min-width: 184px;
+  margin-left: auto;
+}
+.quiz__next-question[disabled] {
+  pointer-events: none;
+  box-shadow: none;
+  background-color: #706581;
+  opacity: 0.8;
+}
+.quiz__form-submit {
+  min-width: 184px;
+  margin-left: auto;
+}
+.quiz__form {
+  display: grid;
+  gap: 16px;
+}
+.quiz__form-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  row-gap: 8px;
+  grid-template-rows: repeat(4, 40px);
+}
+.quiz__form-inner input,
+.quiz__form-inner label {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: #fff;
+  border: none;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+}
+.quiz__form-inner label {
+  cursor: pointer;
+}
+.quiz__form-inner label svg {
+  margin-right: 8px;
+}
+.quiz__form-inner label span {
+  color: #757575;
+}
+.quiz__form-inner textarea {
+  grid-column: 2/3;
+  grid-row: 1/5;
+  border: none;
+  padding: 8px 32px;
+  border-radius: 4px;
+  background-color: #fff;
+}
 .main-page__board {
   z-index: 2;
 }

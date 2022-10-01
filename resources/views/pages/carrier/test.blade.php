@@ -85,32 +85,13 @@
           <div class="content" data-content="test-page-test-{{ $locale }}">{!! $data['test-page-test-' . $locale] !!}</div>
         </div>
 
-        <form class="test__form form">
+        <div class="test__form form">
           <div class="form__content">
             <div class="content" data-content="test-page-form-{{ $locale }}">{!! $data['test-page-form-' . $locale] !!}</div>
           </div>
 
-          <div>
-            <p class="test__stage">Этап 1 из 10</p>
-            <p class="test__stage test__stage--light">Финансовый блок</p>
-          </div>
-
-          <div class="test__item">
-            <p class="test__item-question">Финансовый анализ является элементом анализа:</p>
-            <input class="visually-hidden test__item-variant" type="radio" name="quest1" id="quest1">
-            <label class="test__item-label" for="quest1">инвестиционного</label>
-            <input class="visually-hidden test__item-variant" type="radio" name="quest1" id="quest2">
-            <label class="test__item-label" for="quest2">управленческого</label>
-            <input class="visually-hidden test__item-variant" type="radio" name="quest1" id="quest3">
-            <label class="test__item-label" for="quest3">финансового состояния</label>
-            <input class="visually-hidden test__item-variant" type="radio" name="quest1" id="quest4">
-            <label class="test__item-label" for="quest4">экономического</label>
-          </div>
-
-          <div class="form__bottom">
-            <button class="button" style="min-width: 180px;" type="button">@lang('Далее')</button>
-          </div>
-        </form>
+          <div class="quiz-container"></div>
+        </div>
       </section>
     </div>
   </main>
