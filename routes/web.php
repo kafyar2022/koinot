@@ -6,6 +6,7 @@ use App\Http\Controllers\CarrierController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PartnershipController;
@@ -41,6 +42,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
     Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier');
     Route::get('/carrier/test', [CarrierController::class, 'test'])->name('carrier.test');
+    Route::post('/quiz/send-result', [MailController::class, 'senQuizResult']);
   });
   Route::get('/dashboard', [DashController::class, 'index'])->name('dashboard');
   Route::get('/dashboard/toggle-mode', [DashController::class, 'toggleMode'])->name('mode');
