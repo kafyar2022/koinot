@@ -4,6 +4,17 @@
 
 .investors-page__board {
   z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: (rgba(29, 29, 29, 0.7));
+  }
 }
 
 .investors-page__board-content {

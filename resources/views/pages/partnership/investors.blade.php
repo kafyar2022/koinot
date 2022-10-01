@@ -6,9 +6,27 @@
 
 @section('content')
   <main class="investors-page">
-    <div class="investors-page__board board" style="background-image: linear-gradient(rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0.7)), url('/files/img/investors-page-board.jpg')">
+    <div class="investors-page__board board">
+      <video
+        class="video-card"
+        width="320"
+        height="240"
+        autoplay
+        loop
+        muted>
+        <source src="{{ asset('video/trimmed/opportunity.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <div class="board__container container">
         <div class="investors-page__board-content" data-content="investors-page-board-{{ $locale }}">{!! $data['investors-page-board-' . $locale] !!}</div>
+        <button
+          class="watch-video"
+          data-src="{{ asset('video/mission.mp4') }}"
+          onclick="window.playVideo(this)"
+          style="margin-left: 240px"
+          type="button">
+          @lang('Смотреть <br> видео')
+        </button>
       </div>
     </div>
 
