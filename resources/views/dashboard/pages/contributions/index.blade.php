@@ -43,7 +43,7 @@
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>
-                <div style="min-width: max-content;">{{ $contribution->created_at }}</div>
+                <div style="min-width: max-content;">{{ $contribution->date }}</div>
               </td>
               <td>
                 <div style="min-width: max-content;">{{ $contribution->title }}</div>
