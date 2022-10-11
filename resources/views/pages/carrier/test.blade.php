@@ -67,7 +67,7 @@
         </ul>
 
         <img class="carrier-stages__img board" src="{{ asset('files/img/carrier-stage.jpg') }}" width="1280" height="540" alt="Карьерные этапы">
-        <div class="carrier-stages__gallery gallery">
+        {{-- <div class="carrier-stages__gallery gallery">
           @foreach ($data['news']->images as $key => $image)
             <a class="gallery__item @if ($key > 6 || $key == 0) visually-hidden @endif" href="{{ asset('files/news/' . $image->img) }}" title="{{ $image->description }}" data-lcl-thumb="{{ asset('files/news/thumbs/' . $image->img) }}">
               <span class="gallery__thumb" style="background-image: url('/files/news/thumbs/{{ $image->img }}');">
@@ -77,7 +77,7 @@
               </span>
             </a>
           @endforeach
-        </div>
+        </div> --}}
       </section>
 
       <section class="test">
