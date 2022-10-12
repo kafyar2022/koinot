@@ -120,7 +120,7 @@
           <li class="section-template__list-item carrier-page__formula" data-before="Д" style="white-space: initial">
             <div class="content" data-principles="true" data-content="principle-12-{{ $locale }}">{!! $data['principle-12-' . $locale] !!}</div>
           </li>
-          <li class="section-template__list-item carrier-page__formula" data-before="Е" style="white-space: initial">
+          <li class="section-template__list-item carrier-page__formula" data-before="Э" style="white-space: initial">
             <div class="content" data-principles="true" data-content="principle-13-{{ $locale }}">{!! $data['principle-13-' . $locale] !!}</div>
           </li>
         </ul>
