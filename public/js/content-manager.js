@@ -75,10 +75,24 @@ class ContentManager {
 
     cancelButtonEl.addEventListener('click', () => this.destroy());
     saveButtonEl.addEventListener('click', () => {
-      // if (this.#simditor.body[0].textContent.length === 0) {
-      // this.shake();
-      // return;
-      // }
+      if (this.#element.dataset.principles === 'true') {
+        fetch('/texts/update', {
+          headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+          },
+          method: 'post',
+          body: JSON.stringify({
+            slug: this.#element.dataset.content,
+            text: this.#simditor.getValue(),
+          }),
+        })
+          .then((response) => response.json())
+          .then((response) => {
+            this.#element.innerHTML = response.text;
+            this.destroy();
+          });
+        return;
+      }
       saveButtonEl.textContent = 'Сохранение...';
       fetch('/contents/update', {
         headers: {
