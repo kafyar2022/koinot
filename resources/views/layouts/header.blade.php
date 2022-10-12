@@ -105,9 +105,9 @@
             <li class="page-nav__subitem @if (request('category') == 'mission') page-nav__subitem--current @endif">
               <a class="page-nav__sublink" @if (request('category') != 'mission') href="{{ route('about', 'mission') }}" @endif>@lang('Миссия, Видение, Ценности')</a>
             </li>
-            <li class="page-nav__subitem @if (request('category') == 'management') page-nav__subitem--current @endif">
+            {{-- <li class="page-nav__subitem @if (request('category') == 'management') page-nav__subitem--current @endif">
               <a class="page-nav__sublink" @if (request('category') != 'management') href="{{ route('about', 'management') }}" @endif>@lang('Менеджмент')</a>
-            </li>
+            </li> --}}
             <li class="page-nav__subitem @if ($route == 'news' || $route == 'news.show') page-nav__subitem--current @endif">
               <a class="page-nav__sublink" @if ($route != 'news') href="{{ route('news') }}" @endif>@lang('Новости')</a>
             </li>
@@ -118,7 +118,11 @@
           </svg>
         </li>
 
-        <li class="page-nav__item @if ($route == 'projects') page-nav__item--current @endif">
+        <li class="page-nav__item {{ $route == 'projects' ? 'page-nav__item--current' : '' }}">
+          <a class="page-nav__link" @if ($route != 'projects') href="{{ route('projects') }}" @endif>@lang('Проекты')</a>
+        </li>
+
+        {{-- <li class="page-nav__item @if ($route == 'projects') page-nav__item--current @endif">
           <button class="page-nav__button">@lang('Проекты')</button>
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
@@ -133,7 +137,7 @@
           <svg class="page-nav__icon" width="16" height="14">
             <use xlink:href="#triangle"></use>
           </svg>
-        </li>
+        </li> --}}
 
         <li class="page-nav__item @if ($route == 'partnership') page-nav__item--current @endif">
           <a class="page-nav__link" @if (request('category') != 'startups') href="{{ route('partnership', 'investors') }}" @endif>@lang('Партнерство')</a>

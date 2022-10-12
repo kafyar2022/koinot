@@ -2,8 +2,7 @@
 
 <article
   class="contribution-card content"
-  @if (count($contribution->images) > 0) style="background-image: linear-gradient(0deg, rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85)), url('/files/contributions/{{ $contribution->images[0]->img }}')"
-  @else style="background-image: linear-gradient(0deg, rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85))" @endif>
+  @if (count($contribution->images) > 0) style="background-image: url('/files/contributions/{{ $contribution->images[0]->img }}')" @endif>
 
   <h3 class="contribution-card__title">{{ $contribution->title }}</h3>
 

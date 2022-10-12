@@ -1669,6 +1669,8 @@ a {
   margin-right: 32px;
 }
 .contribution-card {
+  position: relative;
+  z-index: 0;
   padding: 64px 48px;
   color: #fff;
   border-radius: 4px;
@@ -1678,6 +1680,22 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+.contribution-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(60, 50, 76, 0.85), rgba(60, 50, 76, 0.85));
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.contribution-card:hover::before {
+  opacity: 0.8;
 }
 .contribution-card__title {
   overflow: hidden;
