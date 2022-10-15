@@ -6,58 +6,29 @@
 
 @section('content')
   <main class="projects-page">
-    @if (count($data['banners']) != 0)
-      <div class="glide banner">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            @foreach ($data['banners'] as $banner)
-              <li class="glide__slide">
-                <img
-                  class="banner__img"
-                  src="{{ asset('img/banners/' . $banner->img) }}"
-                  alt="Баннер"
-                  width="1920"
-                  height="540">
-              </li>
-            @endforeach
-          </ul>
-        </div>
-
-        <div class="glide__bullets" data-glide-el="controls[nav]">
-          @foreach ($data['banners'] as $key => $banner)
-            <button class="glide__bullet" data-glide-dir="={{ $key }}"></button>
-          @endforeach
-        </div>
-
-        <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-            <svg width="36" height="36">
-              <use xlink:href="#more"></use>
-            </svg>
-          </button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-            <svg width="36" height="36">
-              <use xlink:href="#more"></use>
-            </svg>
-          </button>
-        </div>
-
-        <div class="banner__content">
-          <div class="banner__container container">
-            <div class="projects-page__board-content content" @if (request('category')) data-content="projects-{{ request('category') }}-page-board-{{ $locale }}" @else data-content="projects-page-board-{{ $locale }}" @endif>
-              @if (request('category'))
-                {!! $data['projects-' . request('category') . '-page-board-' . $locale] !!}
-              @else
-                {!! $data['projects-page-board-' . $locale] !!}
-              @endif
-            </div>
-          </div>
-          <svg class="board__mask" width="1250" height="540">
-            <use xlink:href="#board-mask"></use>
-          </svg>
-        </div>
+    <div class="history-page__board board">
+      <video
+        class="video-card"
+        width="320"
+        height="240"
+        autoplay
+        loop
+        muted>
+        <source src="{{ asset('video/trimmed/about.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="board__container container">
+        <div class="projects-page__board-content" data-content="projects-page-board-{{ $locale }}">{!! $data['projects-page-board-' . $locale] !!}</div>
+        <button
+          class="watch-video"
+          style="margin-left: 240px"
+          data-src="{{ asset('video/about.mp4') }}"
+          onclick="window.playVideo(this)"
+          type="button">
+          @lang('Смотреть <br> видео')
+        </button>
       </div>
-    @endif
+    </div>
 
     <section class="section-template container">
       <div class="section-template__content">

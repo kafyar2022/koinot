@@ -14,10 +14,10 @@
         autoplay
         loop
         muted>
-        <source src="{{ asset('video/trimmed/about.mp4') }}" type="video/mp4">
+        <source src="{{ asset('video/trimmed/opportunity.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <div class="board__container container">
+      <div class="board__container container">`
         <div class="history-page__board-content" data-content="history-page-board-{{ $locale }}">{!! $data['history-page-board-' . $locale] !!}</div>
         <button
           class="watch-video"

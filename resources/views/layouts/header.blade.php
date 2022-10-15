@@ -64,7 +64,7 @@
               <a
                 class="page-nav__sublink"
                 @if (request('category') != 'history') href="{{ route('about', 'history') }}" @endif>
-                @lang('История')
+                @lang('Сфера деятельности')
               </a>
             </li>
 
@@ -84,7 +84,7 @@
               <a
                 class="page-nav__sublink"
                 @if ($route != 'news') href="{{ route('news') }}" @endif>
-                @lang('Сфера деятельности')
+                @lang('Новости')
               </a>
             </li>
           </ul>

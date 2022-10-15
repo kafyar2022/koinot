@@ -5,14 +5,11 @@
         <dt class="page-footer__menu-caption">@lang('О нас')</dt>
 
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'history']) }}">@lang('История')</a>
+          <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'history']) }}">@lang('Сфера деятельности')</a>
         </dd>
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'mission']) }}">@lang('Миссия, Видение, Ценности')</a>
         </dd>
-        {{-- <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'management']) }}">@lang('Менеджмент')</a>
-        </dd> --}}
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('news', $locale) }}">@lang('Новости')</a>
         </dd>
