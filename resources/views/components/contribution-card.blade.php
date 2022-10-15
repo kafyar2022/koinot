@@ -6,7 +6,7 @@
 
   <h3 class="contribution-card__title">{{ $contribution->title }}</h3>
 
-  <div class="contribution-card__content">{{ strip_tags($contribution->content) }}</div>
+  <div class="contribution-card__content">{!! strip_tags($contribution->content) !!}</div>
 
   <a class="contribution-card__link" href="{{ route('contribution.show', $contribution->slug) }}">
     @lang('Подробнее')

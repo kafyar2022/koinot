@@ -10,36 +10,11 @@
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'mission']) }}">@lang('Миссия, Видение, Ценности')</a>
         </dd>
-        <dd class="page-footer__menu-item">
+        {{-- <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'management']) }}">@lang('Менеджмент')</a>
-        </dd>
+        </dd> --}}
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('news', $locale) }}">@lang('Новости')</a>
-        </dd>
-      </div>
-
-      <div class="page-footer__menu-list">
-        <dt class="page-footer__menu-caption">@lang('Партнерство')</dt>
-
-        <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('partnership', ['locale' => $locale, 'category' => 'investors']) }}">@lang('Государствам')</a>
-        </dd>
-        <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('partnership', ['locale' => $locale, 'category' => 'investors']) }}">@lang('Инвесторам')</a>
-        </dd>
-        <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('partnership', ['locale' => $locale, 'category' => 'startups']) }}">@lang('Стартаперам и новаторам')</a>
-        </dd>
-      </div>
-
-      <div class="page-footer__menu-list">
-        <dt class="page-footer__menu-caption">@lang('Проекты')</dt>
-
-        <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('projects', ['locale' => $locale, 'category' => 'by-us']) }}">@lang('Реализованные нами')</a>
-        </dd>
-        <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('projects', ['locale' => $locale, 'category' => 'with-us']) }}">@lang('При нашей поддержке')</a>
         </dd>
       </div>
 
@@ -51,6 +26,12 @@
         </dd>
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('carrier', $locale) }}">@lang('Карьера')</a>
+        </dd>
+        <dd class="page-footer__menu-item">
+          <a class="page-footer__menu-link" href="{{ route('projects', $locale) }}">@lang('Проекты')</a>
+        </dd>
+        <dd class="page-footer__menu-item">
+          <a class="page-footer__menu-link" href="{{ route('partnership', $locale) }}">@lang('Партнерство')</a>
         </dd>
         <dd class="page-footer__menu-item">
           <a class="page-footer__menu-link" href="{{ route('contacts', $locale) }}">@lang('Контакты')</a>

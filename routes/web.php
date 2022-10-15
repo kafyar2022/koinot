@@ -35,8 +35,8 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('/about/{category}', [AboutController::class, 'index'])->name('about');
     Route::get('/news', [NewsController::class, 'index'])->name('news');
     Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
-    Route::get('/projects/{category?}', [ProjectsController::class, 'index'])->name('projects');
-    Route::get('/partnership/{category}', [PartnershipController::class, 'index'])->name('partnership');
+    Route::get('/projects/', [ProjectsController::class, 'index'])->name('projects');
+    Route::get('/partnership', [PartnershipController::class, 'index'])->name('partnership');
     Route::get('/contribution', [ContributionController::class, 'index'])->name('contribution');
     Route::get('/contribution/{slug}', [ContributionController::class, 'show'])->name('contribution.show');
     Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
@@ -50,6 +50,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::post('/contents/update', [DashController::class, 'updateContent']);
   Route::post('/texts/update', [DashController::class, 'updateText']);
   Route::get('/news-img/delete/{id}', [DashController::class, 'deleteNewsImg']);
+  Route::get('/contribution-img/delete/{id}', [DashController::class, 'deleteContributionImg']);
 
   Route::get('/dashboard/histories/{action?}/{history?}', [DashController::class, 'histories'])->name('dashboard.histories');
   Route::post('/dashboard/histories/{action?}', [DashController::class, 'historiesPost'])->name('histories.post');

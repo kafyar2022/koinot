@@ -1525,6 +1525,10 @@ a {
   -o-object-fit: contain;
      object-fit: contain;
 }
+.project-card__link {
+  max-width: 220px;
+  overflow: hidden;
+}
 .project-card__link:hover {
   text-decoration: underline;
 }

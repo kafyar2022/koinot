@@ -68,7 +68,9 @@
         <div class="form-dash__images">
           @if ($data['contribution'])
             @foreach ($data['contribution']->images as $image)
-              <img src={{ asset('files/contributions/thumbs/' . $image->img) }} width="70" height="70">
+              <div data-img="{{ $image->id }}">
+                <img src={{ asset('files/contributions/thumbs/' . $image->img) }} width="70" height="70">
+              </div>
             @endforeach
           @endif
         </div>
@@ -78,5 +80,5 @@
 @endsection
 
 @section('script')
-  <script src="{{ asset('js/dashboard/pages/news/show.js') }}" type="module"></script>
+  <script src="{{ asset('js/dashboard/pages/contributions/show.js') }}" type="module"></script>
 @endsection

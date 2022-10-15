@@ -520,6 +520,14 @@ class DashController extends Controller
     return 'success';
   }
 
+  public function deleteContributionImg($id)
+  {
+    $img = ContributionImage::find($id);
+    $img->delete();
+
+    return 'success';
+  }
+
   public function banners(Request $request)
   {
     switch ($request->action) {

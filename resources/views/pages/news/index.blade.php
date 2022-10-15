@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  @lang('Новости') | @lang('Коиноти нав')
+  @lang('Сфера деятельности') | @lang('Коиноти нав')
 @endsection
 
 @section('content')

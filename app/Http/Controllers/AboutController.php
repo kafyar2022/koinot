@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Helpers\Helper;
 use App\Models\Banner;
 use App\Models\History;
-use App\Models\Specialist;
-use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
@@ -17,19 +15,18 @@ class AboutController extends Controller
     $data = Helper::getContents($locale, 'about.' . $category);
     $data['banners'] = Banner::where('page', 'about.' . $category)->get();
 
+
     switch ($category) {
       case 'history':
-        $data['histories'] = History::where('locale', $locale)
-          ->get();
-        break;
+        $data['histories'] = History::where('locale', $locale)->get();
 
-      case 'management':
-        $data['specialists'] = Specialist::select('id', 'locale', 'position', 'name', 'surname', 'avatar', 'about')
-          ->where('locale', $locale)
-          ->get();
-        break;
+        return view('pages.about.history', compact('data'));
+
+      case 'mission':
+        return view('pages.about.mission', compact('data'));
+
+      default:
+        return abort(404);
     }
-
-    return view('pages.about.' . $category, compact('data'));
   }
 }
