@@ -3236,6 +3236,10 @@ a {
   display: flex;
   white-space: pre-wrap;
   padding: 32px 48px;
+  transition: 0.3s;
+}
+.carrier-page__formula:hover {
+  background-color: rgba(60, 50, 76, 0.8);
 }
 .carrier-page__formula::before {
   content: attr(data-before);
@@ -3278,6 +3282,10 @@ a {
   align-items: center;
   border-radius: 4px;
   padding: 32px 48px;
+  transition: 0.3s;
+}
+.carrier-page__principles-item:hover {
+  background-color: rgba(60, 50, 76, 0.8);
 }
 .carrier-page__principles-item::before {
   display: flex;

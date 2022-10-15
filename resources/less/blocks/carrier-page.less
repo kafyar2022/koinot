@@ -51,6 +51,11 @@
   display: flex;
   white-space: pre-wrap;
   padding: 32px 48px;
+  transition: .3s;
+
+  &:hover {
+    background-color: fade(@secondary, 80%);
+  }
 
   &::before {
     content: attr(data-before);
@@ -90,6 +95,11 @@
   align-items: center;
   border-radius: 4px;
   padding: 32px 48px;
+  transition: .3s;
+
+  &:hover {
+    background-color: fade(@secondary, 80%);
+  }
 
   &::before {
     .circle();
