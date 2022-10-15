@@ -14,7 +14,7 @@ class ProjectsController extends Controller
     $locale = app()->getLocale();
     $data = Helper::getContents($locale, 'projects');
     $data['banners'] = Banner::where('page', 'projects')->get();
-    $data['projects'] = Project::where('locale', $locale)->paginate(9);
+    $data['projects'] = Project::where('locale', $locale)->get();
 
     return view('pages.projects.index', compact('data'));
   }

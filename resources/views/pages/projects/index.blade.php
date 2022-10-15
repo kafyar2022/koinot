@@ -46,10 +46,6 @@
           <x-project-card :project="$project" />
         @endforeach
       </div>
-
-      <div class="section-template__pagination">
-        {{ $data['projects']->fragment('projects')->links('components.pagination') }}
-      </div>
     </section>
   </main>
 @endsection
