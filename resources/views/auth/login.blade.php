@@ -9,14 +9,14 @@
   <meta name="robots" content="noindex">
   <meta name="googlebot" content="noindex">
 
-  <title>Вход | Коиноти нав</title>
+  <title>Коиноти нав | Вход</title>
 
   <link rel="icon" href="{{ asset('favicon.ico') }}">
   <link rel="icon" href="{{ asset('favicon/icon.svg') }}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ asset('favicon/180x180.png') }}">
   <link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
 
-  <link rel="stylesheet" href="{{ mix('css/style.css') }}">
+  <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
 </head>
 
 <body class="page__body">

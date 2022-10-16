@@ -63,7 +63,7 @@ export default class QuizForm {
     this.#form.querySelector('button').textContent = 'Отправляю...';
     this.#form.append(inputEl);
 
-    fetch('/quiz/send-result', {
+    fetch('/carrier/test', {
       headers: {
         'X-CSRF-TOKEN': document
           .querySelector('meta[name="csrf-token"]')

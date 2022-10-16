@@ -2,25 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\Helper;
-use App\Models\Banner;
 use App\Models\History;
+use stdClass;
 
 class AboutController extends Controller
 {
   public function index($category)
   {
-    $locale = app()->getLocale();
-
-    $data = Helper::getContents($locale, 'about.' . $category);
-    $data['banners'] = Banner::where('page', 'about.' . $category)->get();
-
+    $data = new stdClass();
 
     switch ($category) {
-      case 'history':
-        $data['histories'] = History::where('locale', $locale)->get();
+      case 'field-of-activity':
+        $data->histories = History::get();
 
-        return view('pages.about.history', compact('data'));
+        return view('pages.about.field-of-activity', compact('data'));
 
       case 'mission':
         return view('pages.about.mission', compact('data'));

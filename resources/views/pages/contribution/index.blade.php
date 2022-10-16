@@ -1,20 +1,20 @@
 @extends('layouts.master')
 
 @section('title')
-  @lang('Вклад в общество') | @lang('Коиноти нав')
+  Коиноти нав | Вклад в общество
 @endsection
 
 @section('content')
   <main class="contribution-page">
-    @if (count($data['banners']) != 0)
+    @if (count($data->banners) != 0)
       <div class="glide banner">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            @foreach ($data['banners'] as $banner)
+            @foreach ($data->banners as $banner)
               <li class="glide__slide">
                 <img
                   class="banner__img"
-                  src="{{ asset('img/banners/' . $banner->img) }}"
+                  src="{{ $banner->img }}"
                   alt="Баннер"
                   width="1920"
                   height="540">
@@ -24,7 +24,7 @@
         </div>
 
         <div class="glide__bullets" data-glide-el="controls[nav]">
-          @foreach ($data['banners'] as $key => $banner)
+          @foreach ($data->banners as $key => $banner)
             <button class="glide__bullet" data-glide-dir="={{ $key }}"></button>
           @endforeach
         </div>
@@ -44,7 +44,10 @@
 
         <div class="banner__content">
           <div class="banner__container container">
-            <div class="contribution-page__board-content" data-content="contribution-page-board-{{ $locale }}">{!! $data['contribution-page-board-' . $locale] !!}</div>
+            <h2 class="banner__title">Вклад в общество</h2>
+            <p class="banner__subtitle">Мы - социально-ответственный холдинг,<br>
+              поддерживающий национальные цели<br>
+              развития страны.</p>
           </div>
           <svg class="board__mask" width="1250" height="540">
             <use xlink:href="#board-mask"></use>
@@ -55,11 +58,21 @@
 
     <section class="section-template container" id="contributions">
       <div class="section-template__content">
-        <div class="content" data-content="contribution-page-{{ $locale }}">{!! $data['contribution-page-' . $locale] !!}</div>
+        <div class="content">
+          <h2>Вклад в общество</h2>
+          <p>Группа компаний "КОИНОТИ НАВ" - социально-ответственный холдинг, который поддерживает
+            национальные цели развития страны. "КОИНОТИ НАВ" постоянно стремится оказывать
+            положительное влияние на качество жизни, как общества в целом, так и отдельных
+            социальных групп, не ограничиваясь разовыми мероприятиями. Мы помогаем не только
+            людям, оказавшимся в сложной жизненной ситуации, но и тем, кто ищет поддержки в
+            своих благих начинаний. В Группе компаний "КОИНОТИ НАВ" работают инициативные и
+            ответственные люди, компетентные организаторы, всегда доводящие замысел до
+            логического результата. </p>
+        </div>
       </div>
 
       <ul class="section-template__list">
-        @foreach ($data['contributions'] as $contribution)
+        @foreach ($data->contributions as $contribution)
           <li class="section-template__list-item">
             <x-contribution-card :contribution="$contribution" />
           </li>
@@ -67,7 +80,7 @@
       </ul>
 
       <div class="section-template__pagination">
-        {{ $data['contributions']->fragment('contributions')->links('components.pagination') }}
+        {{ $data->contributions->fragment('contributions')->links('components.pagination') }}
       </div>
     </section>
   </main>

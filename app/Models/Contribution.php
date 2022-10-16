@@ -23,6 +23,6 @@ class Contribution extends Model
 
   public function images()
   {
-    return $this->hasMany(ContributionImage::class, 'contribution_id');
+    return $this->hasMany(Image::class, 'contribution_id');
   }
 }

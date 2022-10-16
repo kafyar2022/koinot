@@ -1,4 +1,5 @@
 import './page-nav.js';
+import './glide.min.js';
 import { createElement } from './util.js';
 
 const scrollToTopEl = document.querySelector('.page-footer__button');

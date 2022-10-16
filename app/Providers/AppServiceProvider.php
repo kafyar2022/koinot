@@ -31,7 +31,6 @@ class AppServiceProvider extends ServiceProvider
     view()->composer('*', function ($view) {
       return $view->with([
         'route' => \Route::currentRouteName(),
-        'locale' => app()->getLocale(),
       ]);
     });
   }

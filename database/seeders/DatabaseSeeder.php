@@ -21,13 +21,11 @@ class DatabaseSeeder extends Seeder
     ]);
 
     $this->call([
-      ContentSeeder::class,
-      TextsSeeder::class,
-      HistoriesSeeder::class,
       BannersSeeder::class,
+      HistoriesSeeder::class,
       NewsSeeder::class,
+      ImagesSeeder::class,
       ProjectsSeeder::class,
-      SpecialistsSeeder::class,
       ContributionsSeeder::class,
     ]);
   }

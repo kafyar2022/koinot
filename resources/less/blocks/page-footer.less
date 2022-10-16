@@ -22,6 +22,16 @@
   &:not(:last-child) {
     margin-right: 64px;
   }
+
+  &:last-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+
+    dt {
+      grid-column: span 2;
+    }
+  }
 }
 
 .page-footer__menu-caption {

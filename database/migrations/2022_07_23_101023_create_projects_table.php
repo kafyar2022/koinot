@@ -15,8 +15,6 @@ class CreateProjectsTable extends Migration
   {
     Schema::create('projects', function (Blueprint $table) {
       $table->id();
-      $table->string('locale');
-      $table->boolean('by_us');
       $table->string('title');
       $table->string('logo')->nullable();
       $table->string('url')->nullable();

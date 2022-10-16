@@ -1,51 +1,3 @@
-.main-page__board {
-  z-index: 2;
-}
-
-.main-page__board-content {
-  min-height: 22px;
-
-  h1,
-  h2 {
-    font-weight: 700;
-    font-size: 42px;
-    margin-top: 0;
-    margin-bottom: 0;
-
-    &:last-of-type {
-      margin-bottom: 8px;
-    }
-  }
-
-  p {
-    font-weight: 300;
-    font-size: 28px;
-    margin: 0;
-
-    &:empty {
-      height: 22px;
-    }
-  }
-
-  a {
-    margin-top: 32px;
-    min-width: 220px;
-    .button();
-  }
-
-  @media (max-width: (@desktop-width - 1px)) {
-
-    h1,
-    h2 {
-      font-size: 40px;
-    }
-
-    p {
-      font-size: 24px;
-    }
-  }
-}
-
 .main-page__grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -111,17 +63,6 @@
   &:last-child {
     grid-column: span 4;
     grid-row: span 2;
-  }
-
-  @media (max-width: (@desktop-width - 1px)) {
-    padding: 24px;
-
-    &:not(:first-child) {
-      p {
-        margin-right: 2px;
-        display: inline;
-      }
-    }
   }
 }
 

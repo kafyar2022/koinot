@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  @lang('Контакты') | @lang('Коиноти нав')
+  Коиноти нав | Контакты
 @endsection
 
 @section('content')
@@ -12,14 +12,15 @@
 
     <div class="container">
       <div class="contacts-page__content">
-        <div class="content" data-content="contacts-page-office-{{ $locale }}">{!! $data['contacts-page-office-' . $locale] !!}</div>
+        <div class="content">
+          <h2>Связь с нами</h2>
+          <p>У вас возникли какие-либо вопросы или хотите что-то обсудить с нами?<br>
+            Пожалуйста свяжитесь с нашими сотрудниками или отправьте нам сообщение<br>
+            по электронной почте, и мы обязательно ответим вам в ближайшее время.</p>
+        </div>
       </div>
 
-      <x-contacts-list :data="$data" />
-
-      <div class="contacts-page__content">
-        {{-- <div class="content" data-content="contacts-page-office-{{ $locale }}">{!! $data['contacts-page-office-' . $locale] !!}</div> --}}
-      </div>
+      <x-contacts-list />
     </div>
   </main>
 @endsection

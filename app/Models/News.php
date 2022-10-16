@@ -23,6 +23,6 @@ class News extends Model
 
   public function images()
   {
-    return $this->hasMany(NewsImg::class, 'news_id');
+    return $this->hasMany(Image::class, 'news_id');
   }
 }

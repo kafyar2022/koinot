@@ -2,42 +2,57 @@
   <div class="page-footer__top">
     <dl class="page-footer__menu">
       <div class="page-footer__menu-list">
-        <dt class="page-footer__menu-caption">@lang('О нас')</dt>
+        <dt class="page-footer__menu-caption">О нас</dt>
 
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'history']) }}">@lang('Сфера деятельности')</a>
+          <a class="page-footer__menu-link" href="{{ route('about', 'field-of-activity') }}">
+            Сфера деятельности
+          </a>
         </dd>
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('about', ['locale' => $locale, 'category' => 'mission']) }}">@lang('Миссия, Видение, Ценности')</a>
+          <a class="page-footer__menu-link" href="{{ route('about', 'mission') }}">
+            Миссия, Видение, Ценности
+          </a>
         </dd>
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('news', $locale) }}">@lang('Новости')</a>
+          <a class="page-footer__menu-link" href="{{ route('news') }}">
+            Новости
+          </a>
         </dd>
       </div>
 
       <div class="page-footer__menu-list">
-        <dt class="page-footer__menu-caption">@lang('Другое')</dt>
+        <dt class="page-footer__menu-caption">Полезные ссылки</dt>
 
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('contribution', $locale) }}">@lang('Вклад в общество')</a>
+          <a class="page-footer__menu-link" href="{{ route('projects') }}">
+            Проекты
+          </a>
         </dd>
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('carrier', $locale) }}">@lang('Карьера')</a>
+          <a class="page-footer__menu-link" href="{{ route('partnership') }}">
+            Партнерство
+          </a>
         </dd>
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('projects', $locale) }}">@lang('Проекты')</a>
+          <a class="page-footer__menu-link" href="{{ route('contribution') }}">
+            Вклад в общество
+          </a>
         </dd>
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('partnership', $locale) }}">@lang('Партнерство')</a>
+          <a class="page-footer__menu-link" href="{{ route('carrier') }}">
+            Карьера
+          </a>
         </dd>
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('contacts', $locale) }}">@lang('Контакты')</a>
+          <a class="page-footer__menu-link" href="{{ route('contacts') }}">
+            Контакты
+          </a>
         </dd>
       </div>
     </dl>
 
     <button class="page-footer__button circle" type="button">
-      <span class="visually-hidden">@lang('Пролистать наверх')</span>
       <svg width="18" height="18">
         <use xlink:href="#more"></use>
       </svg>
@@ -46,57 +61,26 @@
 
   <div class="page-footer__bottom container">
     <div class="page-footer__details details">
-      <a class="details__item" href="mailto:{{ $data['details-email-' . $locale] }}">
+      <a class="details__item" href="mailto:info@koinotinav.tj">
         <span class="details__icon">
           <svg width="18" height="16">
             <use xlink:href="#email"></use>
           </svg>
         </span>
-        <span class="details__info" data-text="details-email-{{ $locale }}">{{ $data['details-email-' . $locale] }}</span>
+        <span class="details__info">info@koinotinav.tj</span>
       </a>
-      <a class="details__item" href="tel:{{ str_replace([' ', '(', ')', '-'], '', $data['details-phone-' . $locale]) }}">
+      <a class="details__item" href="tel:+992446000043">
         <span class="details__icon">
           <svg width="17" height="16">
             <use xlink:href="#phone"></use>
           </svg>
         </span>
-        <span class="details__info" data-text="details-phone-{{ $locale }}">{{ $data['details-phone-' . $locale] }}</span>
+        <span class="details__info">+992 (44) 600 00 43</span>
       </a>
     </div>
 
-    {{-- <ul class="social-list">
-      <li class="social-list__item">
-        <a class="social-list__link" href="#">
-          <span class="visually-hidden">Фейсбук</span>
-          <span class="social-list__icon">
-            <svg width="13" height="22">
-              <use xlink:href="#facebook"></use>
-            </svg>
-          </span>
-        </a>
-      </li>
-      <li class="social-list__item">
-        <a class="social-list__link" href="#">
-          <span class="visually-hidden">Инстаграм</span>
-          <span class="social-list__icon">
-            <svg width="22" height="22">
-              <use xlink:href="#instagram"></use>
-            </svg>
-          </span>
-        </a>
-      </li>
-      <li class="social-list__item">
-        <a class="social-list__link" href="#">
-          <span class="visually-hidden">Линкед ин</span>
-          <span class="social-list__icon">
-            <svg width="22" height="21">
-              <use xlink:href="#linkedin"></use>
-            </svg>
-          </span>
-        </a>
-      </li>
-    </ul> --}}
-
-    <p class="page-footer__copyright">&#169; {{ date('Y') }} ЗАО &#8220;@lang('Коиноти нав')&#8221; <br> @lang('Все права защищены')</p>
+    <p class="page-footer__copyright">
+      &#169; {{ date('Y') }} ЗАО &#8220;Коиноти нав&#8221;<br>
+      Все права защищены</p>
   </div>
 </footer>

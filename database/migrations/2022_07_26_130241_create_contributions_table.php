@@ -15,7 +15,6 @@ class CreateContributionsTable extends Migration
   {
     Schema::create('contributions', function (Blueprint $table) {
       $table->id();
-      $table->string('locale');
       $table->string('title');
       $table->string('slug')->unique();
       $table->text('content')->nullable();
