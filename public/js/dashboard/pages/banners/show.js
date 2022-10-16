@@ -18,7 +18,7 @@ submitEl.addEventListener('click', () => {
 if (imageEls) {
   imageEls.forEach((imgEl) => {
     imgEl.addEventListener('click', (evt) => {
-      fetch(`/banners/delete/${evt.target.dataset.img}`)
+      fetch(`/admin/banners/delete/${evt.target.dataset.img}`)
         .then((response) => {
           if (response.ok) {
             evt.target.remove();

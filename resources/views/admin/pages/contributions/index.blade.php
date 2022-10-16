@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.master')
+@extends('admin.layouts.master')
 
 @section('content')
   <main class="page__content">
@@ -7,26 +7,17 @@
 
     <ul class="page__breadcrumbs">
       <li class="page__breadcrumb">
-        <a href="{{ route('main') }}">Главная /</a>
+        <a href="{{ route('main') }}">Главная =></a>
       </li>
       <li class="page__breadcrumb page__breadcrumb--current">Вклад в общество</li>
     </ul>
 
     <div class="page__link-wrapper" style="padding: 0 2px">
-      @if ($data['locale'] == 'ru')
-        <h1 class="page__title">Русский</h1>
-        <a class="page__link" href="{{ route($route) }}?locale=en">
-          Посмотреть на английском
-        </a>
-      @endif
-      @if ($data['locale'] == 'en')
-        <h1 class="page__title">Английский</h1>
-        <a class="page__link" href="{{ route($route) }}">Посмотреть на русском</a>
-      @endif
-      <a class="page__link" href="{{ route('dashboard.contributions', ['action' => 'create']) }}">Добавить</a>
+      <h1 class="page__title">Вклад в общество</h1>
+      <a class="page__link" href="{{ route('admin.contributions', ['action' => 'create']) }}">Добавить</a>
     </div>
 
-    @if (count($data['contributions']) != 0)
+    @if (count($data->contributions) != 0)
       <table class="page__table">
         <thead>
           <tr>
@@ -39,11 +30,13 @@
         </thead>
 
         <tbody>
-          @foreach ($data['contributions'] as $key => $contribution)
+          @foreach ($data->contributions as $key => $contribution)
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>
-                <div style="min-width: max-content;">{{ $contribution->date }}</div>
+                <div style="min-width: max-content;">
+                  {{ Carbon\Carbon::create($contribution->date)->isoFormat('DD.MM.YYYY') }}
+                </div>
               </td>
               <td>
                 <div style="min-width: max-content;">{{ $contribution->title }}</div>
@@ -52,7 +45,7 @@
                 <div>{{ $contribution->content }}</div>
               </td>
               <td>
-                <a href="{{ route('dashboard.contributions', ['action' => 'edit', 'contribution' => $contribution->id]) }}">Редактировать</a>
+                <a href="{{ route('admin.contributions', ['action' => 'edit', 'contribution' => $contribution->id]) }}">Редактировать</a>
               </td>
               <td>
                 <a data-action="delete" data-id="{{ $contribution->id }}">Удалить</a>

@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.master')
+@extends('admin.layouts.master')
 
 @section('content')
   <main class="page__content">
@@ -7,24 +7,17 @@
 
     <ul class="page__breadcrumbs">
       <li class="page__breadcrumb">
-        <a href="{{ route('main') }}">Главная /</a>
+        <a href="{{ route('main') }}">Главная =></a>
       </li>
       <li class="page__breadcrumb page__breadcrumb--current">Проекты</li>
     </ul>
 
     <div class="page__link-wrapper" style="padding: 0 2px">
-      @if ($data['locale'] == 'ru')
-        <h1 class="page__title">Проекты на русском</h1>
-        <a class="page__link" href="{{ route($route) }}?locale=en">Посмотреть проекты на английском</a>
-      @endif
-      @if ($data['locale'] == 'en')
-        <h1 class="page__title">Проекты на английском</h1>
-        <a class="page__link" href="{{ route($route) }}">Посмотреть проекты на русском</a>
-      @endif
-      <a class="page__link" href="{{ route('dashboard.projects', ['action' => 'create']) }}">Добавить проект</a>
+      <h1 class="page__title">Проекты</h1>
+      <a class="page__link" href="{{ route('admin.projects', ['action' => 'create']) }}">Добавить</a>
     </div>
 
-    @if (count($data['projects']) != 0)
+    @if (count($data->projects) != 0)
       <table class="page__table">
         <thead>
           <tr>
@@ -37,7 +30,7 @@
         </thead>
 
         <tbody>
-          @foreach ($data['projects'] as $key => $project)
+          @foreach ($data->projects as $key => $project)
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>
@@ -50,7 +43,7 @@
                 <div>{{ $project->url }}</div>
               </td>
               <td>
-                <a href="{{ route('dashboard.projects', ['action' => 'edit', 'project' => $project->id]) }}">Редактировать</a>
+                <a href="{{ route('admin.projects', ['action' => 'edit', 'project' => $project->id]) }}">Редактировать</a>
               </td>
               <td>
                 <a data-action="delete" data-id="{{ $project->id }}">Удалить</a>

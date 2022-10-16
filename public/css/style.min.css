@@ -628,6 +628,24 @@ a {
   opacity: 0;
   visibility: hidden;
 }
+.admin-link {
+  position: fixed;
+  z-index: 99;
+  color: #ed2e38;
+  background-color: #3c324c;
+  bottom: 64px;
+  right: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition: 0.3s;
+}
+.admin-link:hover {
+  background-color: #ed2e38;
+  color: #3c324c;
+}
 .page {
   height: 100%;
   font-size: 16px;

@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.master')
+@extends('admin.layouts.master')
 
 @section('content')
   <main class="page__content">
@@ -7,10 +7,10 @@
 
     <ul class="page__breadcrumbs">
       <li class="page__breadcrumb">
-        <a href="{{ route('main') }}">Главная /</a>
+        <a href="{{ route('main') }}">Главная =></a>
       </li>
       <li class="page__breadcrumb">
-        <a href="{{ route('banners') }}">Баннеры</a>
+        <a href="{{ route('admin.banners') }}">Баннеры</a>
       </li>
     </ul>
 
@@ -25,7 +25,7 @@
       enctype="multipart/form-data">
       @csrf
 
-      <input type="hidden" name="page" value="{{ $data['page'] }}">
+      <input type="hidden" name="page" value="{{ $data->page }}">
 
       <div class="form-dash__element" style="grid-column: span 4;">
         <p>Баннеры (<span style="color: red">1920x540</span>)</p>
@@ -36,10 +36,10 @@
         </label>
 
         <div class="form-dash__images">
-          @if (count($data['banners']) > 0)
-            @foreach ($data['banners'] as $banner)
+          @if (count($data->banners) > 0)
+            @foreach ($data->banners as $banner)
               <div data-img="{{ $banner->id }}">
-                <img src={{ asset('img/banners/' . $banner->img) }} width="240" height="100">
+                <img src="{{ asset($banner->img) }}" width="240" height="100">
               </div>
             @endforeach
           @endif

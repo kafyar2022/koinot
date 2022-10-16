@@ -1,29 +1,25 @@
-@extends('dashboard.layouts.master')
+@extends('admin.layouts.master')
 
 @section('content')
   <main class="page__content">
     <div class="modal modal--fail {{ session()->has('fail') ? '' : 'modal--hidden' }}">{{ session()->get('fail') }}</div>
     <div class="modal modal--success {{ session()->has('success') ? '' : 'modal--hidden' }}">{{ session()->get('success') }}</div>
+
     <ul class="page__breadcrumbs">
       <li class="page__breadcrumb">
-        <a href="{{ route('main') }}">Главная /</a>
+        <a href="{{ route('main') }}">Главная =></a>
       </li>
       <li class="page__breadcrumb page__breadcrumb--current">История компании</li>
     </ul>
 
     <div class="page__link-wrapper" style="padding: 0 2px">
-      @if ($data['locale'] == 'ru')
-        <h1 class="page__title">Истории на русском</h1>
-        <a class="page__link" href="{{ route($route) }}?locale=en">Посмотреть истории на английском</a>
-      @endif
-      @if ($data['locale'] == 'en')
-        <h1 class="page__title">Истории на английском</h1>
-        <a class="page__link" href="{{ route($route) }}">Посмотреть истории на русском</a>
-      @endif
-      <a class="page__link" href="{{ route('dashboard.histories', ['action' => 'create']) }}">Добавить историю</a>
+      <h1 class="page__title">История компании</h1>
+      <a class="page__link" href="{{ route('admin.histories', ['action' => 'create']) }}">
+        Добавить
+      </a>
     </div>
 
-    @if (count($data['histories']) != 0)
+    @if (count($data->histories) != 0)
       <table class="page__table">
         <thead>
           <tr>
@@ -35,7 +31,7 @@
         </thead>
 
         <tbody>
-          @foreach ($data['histories'] as $key => $history)
+          @foreach ($data->histories as $key => $history)
             <tr>
               <td>{{ $key + 1 }}</td>
               <td>
@@ -45,7 +41,7 @@
                 <div>{{ $history->history }}</div>
               </td>
               <td>
-                <a href="{{ route('dashboard.histories', ['action' => 'edit', 'history' => $history->id]) }}">Редактировать</a>
+                <a href="{{ route('admin.histories', ['action' => 'edit', 'history' => $history->id]) }}">Редактировать</a>
               </td>
               <td>
                 <a data-action="delete" data-id="{{ $history->id }}">Удалить</a>

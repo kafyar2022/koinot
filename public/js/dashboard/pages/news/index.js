@@ -4,7 +4,7 @@ document.addEventListener('click', (evt) => {
       .innerHTML = `
       <td colspan="4">Вы уверены что хотите удалить эту новость?</td>
       <td><a data-action="cancel">Отмена</a></td>
-      <td><a href="/dashboard/news/delete/${evt.target.dataset.id}">Удалить</a></td>
+      <td><a href="/admin/news/delete/${evt.target.dataset.id}">Удалить</a></td>
     `;
   }
   if (evt.target.dataset.action === 'cancel') {

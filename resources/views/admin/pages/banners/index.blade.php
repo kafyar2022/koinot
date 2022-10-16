@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.master')
+@extends('admin.layouts.master')
 
 @section('content')
   <main class="page__content">
@@ -7,7 +7,7 @@
 
     <ul class="page__breadcrumbs">
       <li class="page__breadcrumb">
-        <a href="{{ route('main') }}">Главная /</a>
+        <a href="{{ route('main') }}">Главная =></a>
       </li>
       <li class="page__breadcrumb page__breadcrumb--current">Баннеры</li>
     </ul>
@@ -28,43 +28,37 @@
         <tr>
           <td>1</td>
           <td>
-            <a href="{{ route('banners', ['action' => 'show', 'page' => 'main']) }}">Главная страница</a>
+            <a href="{{ route('admin.banners', ['action' => 'show', 'page' => 'main']) }}">Главная страница</a>
           </td>
         </tr>
         <tr>
           <td>2</td>
           <td>
-            <a href="{{ route('banners', ['action' => 'show', 'page' => 'about.management']) }}">Менеджмент</a>
+            <a href="{{ route('admin.banners', ['action' => 'show', 'page' => 'about.management']) }}">Менеджмент</a>
           </td>
         </tr>
         <tr>
           <td>3</td>
           <td>
-            <a href="{{ route('banners', ['action' => 'show', 'page' => 'news']) }}">Новости</a>
+            <a href="{{ route('admin.banners', ['action' => 'show', 'page' => 'news']) }}">Новости</a>
           </td>
         </tr>
         <tr>
           <td>4</td>
           <td>
-            <a href="{{ route('banners', ['action' => 'show', 'page' => 'projects']) }}">Проекты</a>
+            <a href="{{ route('admin.banners', ['action' => 'show', 'page' => 'projects']) }}">Проекты</a>
           </td>
         </tr>
         <tr>
           <td>5</td>
           <td>
-            <a href="{{ route('banners', ['action' => 'show', 'page' => 'contributions']) }}">Вклад в общество</a>
+            <a href="{{ route('admin.banners', ['action' => 'show', 'page' => 'contributions']) }}">Вклад в общество</a>
           </td>
         </tr>
         <tr>
           <td>6</td>
           <td>
-            <a href="{{ route('banners', ['action' => 'show', 'page' => 'carrier']) }}">Карьера</a>
-          </td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>
-            <a href="{{ route('banners', ['action' => 'show', 'page' => 'carrier.test']) }}">Карьера тесты</a>
+            <a href="{{ route('admin.banners', ['action' => 'show', 'page' => 'carrier']) }}">Карьера</a>
           </td>
         </tr>
       </tbody>
