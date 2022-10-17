@@ -65,7 +65,7 @@
       <section
         class="main-page__grid-item"
         style="background-image: url('img/main-page-management.jpg')">
-        <div class="content" style="margin-bottom: 40">
+        <div class="content" style="margin-bottom: 40px">
           <h3>Наш менеджмент</h3>
           <p>В нас сочетаются инновации и традиции. Мы знак истинного качества, символ верности
             и преданности своему делу, своему обществу и стране.</p>
