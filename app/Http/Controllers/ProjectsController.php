@@ -13,7 +13,7 @@ class ProjectsController extends Controller
   {
     $data = new stdClass();
     $data->banners = Banner::where('page', 'projects')->get();
-    $data->projects = Project::get();
+    $data->projects = Project::latest()->get();
 
     return view('pages.projects.index', compact('data'));
   }

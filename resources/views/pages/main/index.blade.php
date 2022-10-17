@@ -48,7 +48,7 @@
               Группа компаний <br>
               "КОИНОТИ НАВ"
             </h2>
-            <a class="banner__link button" href="{{ route('about', 'field-of-activity') }}">
+            <a class="banner__link button" href="{{ route('about', 'history') }}">
               Подробнее
             </a>
           </div>
@@ -65,7 +65,7 @@
       <section
         class="main-page__grid-item"
         style="background-image: url('img/main-page-management.jpg')">
-        <div class="content">
+        <div class="content" style="margin-bottom: 40">
           <h3>Наш менеджмент</h3>
           <p>В нас сочетаются инновации и традиции. Мы знак истинного качества, символ верности
             и преданности своему делу, своему обществу и стране.</p>
