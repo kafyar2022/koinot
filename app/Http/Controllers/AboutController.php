@@ -12,10 +12,10 @@ class AboutController extends Controller
     $data = new stdClass();
 
     switch ($category) {
-      case 'field-of-activity':
+      case 'history':
         $data->histories = History::get();
 
-        return view('pages.about.field-of-activity', compact('data'));
+        return view('pages.about.history', compact('data'));
 
       case 'mission':
         return view('pages.about.mission', compact('data'));

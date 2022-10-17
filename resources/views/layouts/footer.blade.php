@@ -5,8 +5,8 @@
         <dt class="page-footer__menu-caption">О нас</dt>
 
         <dd class="page-footer__menu-item">
-          <a class="page-footer__menu-link" href="{{ route('about', 'field-of-activity') }}">
-            Сфера деятельности
+          <a class="page-footer__menu-link" href="{{ route('about', 'history') }}">
+            История
           </a>
         </dd>
         <dd class="page-footer__menu-item">

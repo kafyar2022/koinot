@@ -38,7 +38,7 @@
           <a class="locales__link">Ru</a>
         </li>
         <li class="locales__item">
-          <a class="locales__link" href="https://koinotinav.com/auth/login">En</a>
+          <a class="locales__link" href="https://koinotinav.com">En</a>
         </li>
       </ul>
     </div>
@@ -57,9 +57,9 @@
           <button class="page-nav__button">О нас</button>
 
           <ul class="page-nav__sublist page-nav__sublist--hidden">
-            <li class="page-nav__subitem {{ request('category') == 'field-of-activity' ? 'page-nav__subitem--current' : '' }}">
-              <a class="page-nav__sublink" href="{{ route('about', 'field-of-activity') }}">
-                Сфера деятельности
+            <li class="page-nav__subitem {{ request('category') == 'history' ? 'page-nav__subitem--current' : '' }}">
+              <a class="page-nav__sublink" href="{{ route('about', 'history') }}">
+                История
               </a>
             </li>
 
