@@ -28,20 +28,20 @@ Route::post('/auth/check', [AuthController::class, 'check'])->name('auth.check')
 Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
-Route::group(['middleware' => ['AuthCheck']], function () {
-  Route::get('/', [MainController::class, 'index'])->name('main');
-  Route::get('/about/{category}', [AboutController::class, 'index'])->name('about');
-  Route::get('/news', [NewsController::class, 'index'])->name('news');
-  Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
-  Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
-  Route::get('/partnership', [PartnershipController::class, 'index'])->name('partnership');
-  Route::get('/contribution', [ContributionController::class, 'index'])->name('contribution');
-  Route::get('/contribution/{slug}', [ContributionController::class, 'show'])->name('contribution.show');
-  Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
-  Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier');
-  Route::get('/carrier/test', [CarrierController::class, 'test'])->name('carrier.test');
-  Route::post('/carrier/test', [CarrierController::class, 'sendTest']);
+Route::get('/', [MainController::class, 'index'])->name('main');
+Route::get('/about/{category}', [AboutController::class, 'index'])->name('about');
+Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
+Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
+Route::get('/partnership', [PartnershipController::class, 'index'])->name('partnership');
+Route::get('/contribution', [ContributionController::class, 'index'])->name('contribution');
+Route::get('/contribution/{slug}', [ContributionController::class, 'show'])->name('contribution.show');
+Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
+Route::get('/carrier', [CarrierController::class, 'index'])->name('carrier');
+Route::get('/carrier/test', [CarrierController::class, 'test'])->name('carrier.test');
+Route::post('/carrier/test', [CarrierController::class, 'sendTest']);
 
+Route::group(['middleware' => ['AuthCheck']], function () {
   Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::get('/images/delete/{id}', [AdminController::class, 'deleteImage']);
